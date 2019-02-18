@@ -1,4 +1,6 @@
 import pytest
+import datetime
+now = datetime.datetime.now()
 import unittest
 from Highway_helper import *
 from pytest import *
@@ -11,15 +13,19 @@ class Test_timesheet:
         self.driver.maximize_window()
         self.driver.get("https://qa.hiway.hashedin.com/")
         self.login=Login()
+        self.login.initial_login(self.driver)
+    @classmethod
+    def setup_method(self):
+        time.sleep(10)
+        timesheet = self.driver.find_element_by_xpath('/html/body/div/md-toolbar/div/div[2]/span[4]/a').click()
+
     @classmethod
     def teardown_class(self):
-        self.login.logout(self.driver)
+        # self.login.logout(self.driver)
         self.driver.close()
 
     def test_name_on_timesheet(self):
-        self.login.initial_login(self.driver)
-        time.sleep(10)
-        timesheet=self.driver.find_element_by_xpath('/html/body/div/md-toolbar/div/div[2]/span[4]/a').click()
+        # timesheet=self.driver.find_element_by_xpath('/html/body/div/md-toolbar/div/div[2]/span[4]/a').click()
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH, '/html/body/md-content/div/div/div[1]/h2')))
         header_displayed=self.driver.find_element_by_xpath('/html/body/md-content/div/div/div[1]/h2')
         name_from_email=str(self.driver.find_element_by_css_selector\
@@ -27,6 +33,9 @@ class Test_timesheet:
         assert name_from_email.lower() in str(header_displayed.text).lower()
 
 
+    def test_default_currentdate(self):
+        url=str(self.driver.current_url)
+        assert now.strftime("%Y-%m-%d") in url
 
 if __name__=='__main__':
     pytest.main()
