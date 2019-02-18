@@ -14,6 +14,7 @@ class Test_timesheet:
         self.driver.get("https://qa.hiway.hashedin.com/")
         self.login=Login()
         self.login.initial_login(self.driver)
+        self.driver.implicitly_wait(3)
     @classmethod
     def setup_method(self):
         time.sleep(10)
@@ -36,6 +37,11 @@ class Test_timesheet:
     def test_default_currentdate(self):
         url=str(self.driver.current_url)
         assert now.strftime("%Y-%m-%d") in url
+
+
+    def test_next_button_disabled(self):
+        next_button=self.driver.find_element_by_xpath('/html/body/md-content/div/div/div[2]/button[2]')
+        assert next_button.is_enabled() == False
 
 if __name__=='__main__':
     pytest.main()
