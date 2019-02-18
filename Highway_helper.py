@@ -6,6 +6,9 @@ from selenium import webdriver
 from selenium.webdriver.ie.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+# driver=webdriver.Chrome("/home/ankit_kumar/PycharmProjects/Selenium_automation/Drivers/chromedriver")
+# driver.maximize_window()
+# driver.get("https://qa.hiway.hashedin.com/")
 
 class Login:
     def initial_login(self,driver):
@@ -18,6 +21,16 @@ class Login:
         element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a.navbar-brand")))
         hiway_login=driver.find_element_by_css_selector('a.h3.btn').click()
 
+
+
+    def logout(self,driver):
+        element = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, 'span.username-position.hide-sm.hide-xs.ng-binding.ng-scope')))
+        username=driver.find_element_by_css_selector('span.username-position.hide-sm.hide-xs.ng-binding.ng-scope').click()
+        element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a')))
+        logout_button=driver.find_element_by_xpath('//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a').click()
+
+
 # initial_login()
 
 # x="hello how are u"
@@ -26,3 +39,6 @@ class Login:
 # z='Time.Sheet@gmail.com'.split('@')[0].replace('.',' ')
 # print(z)
 # print(z.split('@')[0].replace('.',' ') in y)
+# l=Login()
+# l.initial_login()
+# l.logout()
