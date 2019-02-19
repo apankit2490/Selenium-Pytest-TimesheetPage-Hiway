@@ -1,0 +1,6 @@
+{
+  "uname": "ankit.patnaik@hashedin.com",
+  "password": "ANKi@2490",
+  "chromedriver_path": "/home/ankit_kumar/PycharmProjects/Selenium_automation/Drivers/chromedriver",
+  "home_url":"https://qa.hiway.hashedin.com/"
+}

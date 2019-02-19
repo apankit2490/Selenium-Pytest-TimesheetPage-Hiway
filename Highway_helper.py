@@ -1,3 +1,4 @@
+import json
 import time
 from pprint import pprint
 
@@ -11,14 +12,19 @@ from selenium.webdriver.support import expected_conditions as EC
 # driver.get("https://qa.hiway.hashedin.com/")
 
 class Login:
+    with open('data.json','r') as data:
+        data=json.load(data)
+    username=data['uname']
+    password=data['password']
+    home_url = data['home_url']
     def initial_login(self,driver):
         Login_button=driver.find_element_by_css_selector('a.btn.btn-danger.btn-lg').click()
-        Username=driver.find_element_by_id('identifierId').send_keys('ankit.patnaik@hashedin.com')
+        Username=driver.find_element_by_id('identifierId').send_keys(self.username)
         next=driver.find_element_by_xpath('//*[@id="identifierNext"]//span[contains(text(), "Next")]').click()
         element=WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.ID,"password")))
-        password=driver.find_element_by_xpath('//*[@id="password"]//input[@type="password"]').send_keys('ANKi@2490')
+        password=driver.find_element_by_xpath('//*[@id="password"]//input[@type="password"]').send_keys(self.password)
         next_password=driver.find_element_by_xpath('//*[@id="passwordNext"]//span[contains(text(), "Next")]').click()
-        element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a.navbar-brand")))
+        element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "a.h3.btn")))
         hiway_login=driver.find_element_by_css_selector('a.h3.btn').click()
 
 
@@ -29,6 +35,7 @@ class Login:
         username=driver.find_element_by_css_selector('span.username-position.hide-sm.hide-xs.ng-binding.ng-scope').click()
         element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a')))
         logout_button=driver.find_element_by_xpath('//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a').click()
+        driver.get(self.home_url)
 
 
 # initial_login()
