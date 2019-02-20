@@ -1,5 +1,7 @@
+import re
 import time
 
+from colormap import rgb2hex
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -12,8 +14,8 @@ from pages.Hiway_page import Hiway_page
 
 class Timesheet_page:
     # test_driver=Driver().get_driver()
-    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
-        self.driver=driver
+    def __init__(self):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+        # self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
         self.locator_name_in_email='span.username-position.hide-sm.hide-xs.ng-binding.ng-scope'
@@ -132,10 +134,18 @@ class Timesheet_page:
         #     EC.visibility_of((By.XPATH, self.locator_description_from_display)))
         self.description_display=str(self.driver.find_element_by_xpath(self.locator_sl_no).text)
         return self.description_display
+
+    def get_hexcode_from_rgb(self,rgb):
+        m = re.search('rgb\((.+?)\)', rgb)
+        if m:
+            found = m.group(1)
+        r,g,b=found.split(',')
+        return rgb2hex(int(r),int(g),int(b))
     # def get_task_description(self):
 
 
-# obj=Timesheet_page()
+obj=Timesheet_page()
+obj.get_hexcode_from_rgb('rgb(255,64,129)')
 # Page_Login(obj.driver).login_complete()
 # Hiway_page(obj.driver).click_on_Continue()
 # obj.timesheet_page()
