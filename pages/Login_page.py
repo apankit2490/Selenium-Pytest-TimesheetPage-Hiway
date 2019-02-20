@@ -41,6 +41,12 @@ class Page_Login():
         message=self.driver.find_element_by_xpath(self.locator_error_message)
         return str(message.text)
 
+    def login_complete(self):
+        self.initial_login()
+        self.enter_username()
+        self.enter_password()
+
+
 
 
     def getname(self):
