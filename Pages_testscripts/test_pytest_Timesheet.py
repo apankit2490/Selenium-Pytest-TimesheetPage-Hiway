@@ -57,8 +57,10 @@ class Test_timesheet:
     #     time.sleep(10)
     #     project_code=self.driver.find_element_by_xpath('//*[@id="input-432"]').click()
     #     time.sleep(10)
-    # def test_add_task(self):
-    #     self.timesheet.create_entry_complete()
+    def test_add_task(self):
+        self.timesheet.create_entry_complete()
+
+
 
 
 if __name__=='__main__':
