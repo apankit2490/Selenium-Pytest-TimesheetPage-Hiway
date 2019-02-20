@@ -105,9 +105,19 @@ class Timesheet_page:
         self.create_entry_hit_add()
 
     def get_color_rgb_value(self):
-        self.color=self.driver.find_element_by_css_selector('.md-container.md-mode-determinate').value_of_css_property('background-color')
+        self.color=self.driver.find_element_by_css_selector('.md-bar.md-bar2').value_of_css_property('background-color')
         return self.color
 
+    def delete_task(self):
+        while(True):
+            try:
+                element = WebDriverWait(self.driver, 10).until(
+                    EC.visibility_of_element_located((By.XPATH, '//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i')))
+                delete=self.driver.find_element_by_xpath('//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i').click()
+                time.sleep(6)
+
+            except:
+                return
 
 
 
