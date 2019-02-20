@@ -11,8 +11,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    test_driver=Driver().get_driver()
-    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    # test_driver=Driver().get_driver()
+    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -24,6 +24,11 @@ class Timesheet_page:
         self.locator_datepicker='body > md-content > div > div > div.md-title.layout-align-space-between-center.layout-row > span'
         self.locator_type_dropdown='//*/div//md-select'
         self.locator_type_choice='//*/div//md-select-menu/md-content/md-option/div[1]'
+        self.locator_hours='//*/md-input-container/input[@name="newEntry.hrs"]'
+        self.locator_mins='//*/md-input-container/input[@name="newEntry.min"]'
+        self.locator_description='//*/md-input-container/input[@name="newEntry.description"]'
+        self.locator_hit_add= 'body > md-content > div > div > md-card > md-card-text > form > div.md-subhead.layout-wrap.layout-align-center-center.layout-row > button'
+
 
 
     def timesheet_page(self):
@@ -42,12 +47,8 @@ class Timesheet_page:
     def get_current_date(self):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR,self.locator_datepicker)))
         text=str(self.driver.find_element_by_css_selector(self.locator_datepicker).text)
-        date=text.replace(',','').split(" ")
-        required_date=date[3:7]
-        required_date_as_string=""
-        for i in required_date:
-            required_date_as_string+=i+" "
-        return required_date_as_string
+        date=text[12:]
+        return date
 
     def get_next_button_status(self):
         element = WebDriverWait(self.driver, 10).until(
@@ -73,6 +74,36 @@ class Timesheet_page:
             EC.visibility_of_element_located((By.XPATH,self.locator_type_dropdown)))
         select=self.driver.find_element_by_xpath(self.locator_type_dropdown).click()
         choice=self.driver.find_element_by_xpath(self.locator_type_choice).click()
+
+    def create_entry_hours(self,hours='05'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.locator_hours)))
+        self.hour=self.driver.find_element_by_xpath(self.locator_hours).send_keys(hours)
+
+    def create_entry_mins(self,mins='30'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.locator_mins)))
+        self.hour=self.driver.find_element_by_xpath(self.locator_mins).send_keys(mins)
+
+    def create_entry_description(self,description='default description'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.locator_description)))
+        self.hour=self.driver.find_element_by_xpath(self.locator_description).send_keys(description)
+
+    def create_entry_hit_add(self):
+        # element = WebDriverWait(self.driver, 10).until(
+        #     EC.visibility_of((By.CSS_SELECTOR, self.locator_hit_add)))
+        time.sleep(5)
+        add=self.driver.find_element_by_css_selector(self.locator_hit_add).submit()
+
+    def create_entry_complete(self,text='bat',hours='6',mins='25',desc='default desc'):
+        self.create_entry_projectcode(text)
+        self.create_entry_type()
+        self.create_entry_hours(hours)
+        self.create_entry_mins(mins)
+        self.create_entry_description(desc)
+        self.create_entry_hit_add()
+
 
 
 
