@@ -128,7 +128,7 @@ class Timesheet_page:
     def get_description_from_display(self):
         description_display=self.driver.find_element_by_xpath(self.locator_description_from_display).text
         return str(description_display)
-    # def get_task_description(self):
+    def get_task_description(self):
 
 
 # obj=Timesheet_page()
