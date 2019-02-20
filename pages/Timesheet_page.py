@@ -31,6 +31,7 @@ class Timesheet_page:
         self.locator_color_header='.md-bar.md-bar2'
         self.locator_delete_button='//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i'
         self.locator_description_from_display='//form//div//md-input-container/input[@ng-model="entry.description"]'
+        self.locator_sl_no='//div/div/form/div[1]/div[1]/div[1]/div[1]'
 
 
 
@@ -125,10 +126,13 @@ class Timesheet_page:
             except:
                 return
 
-    def get_description_from_display(self):
-        description_display=self.driver.find_element_by_xpath(self.locator_description_from_display).text
-        return str(description_display)
-    def get_task_description(self):
+    def get_slno_from_display(self):
+        time.sleep(5)
+        # element = WebDriverWait(self.driver, 10).until(
+        #     EC.visibility_of((By.XPATH, self.locator_description_from_display)))
+        self.description_display=str(self.driver.find_element_by_xpath(self.locator_sl_no).text)
+        return self.description_display
+    # def get_task_description(self):
 
 
 # obj=Timesheet_page()

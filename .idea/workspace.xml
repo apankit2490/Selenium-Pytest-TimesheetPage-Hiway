@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+            <state relative-caret-position="321">
+              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -65,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="795">
               <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="82" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -101,8 +100,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="318">
+              <caret line="133" column="39" lean-forward="true" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -127,6 +126,7 @@
       <find>self.driver</find>
       <find>self</find>
       <find>driver</find>
+      <find>get</find>
     </findStrings>
     <replaceStrings>
       <replace>driver.self</replace>
@@ -222,7 +222,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Sample">
+  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_task">
     <configuration name="Sample" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -244,7 +244,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -255,7 +255,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_default_currentdate&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_add_task&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -306,11 +306,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" />
         <item itemvalue="Python.Sample" />
         <item itemvalue="Python tests.pytest in test_Login_page.py" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_prev_button_to_previous_date" />
         <item itemvalue="Python tests.pytest in test_pytest_Timesheet.py" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" />
       </list>
     </recent_temporary>
   </component>
@@ -328,35 +328,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.20 at 15h 15m 53s.xml">
-      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 30m 14s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.20 at 15h 17m 57s.xml">
-      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 30m 46s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_default_currentdate - 2019.02.20 at 18h 42m 37s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 32m 30s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_default_currentdate - 2019.02.20 at 18h 42m 52s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 34m 07s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.20 at 18h 50m 51s.xml">
-      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 34m 53s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_default_currentdate - 2019.02.20 at 18h 54m 35s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 36m 52s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.20 at 19h 00m 24s.xml">
-      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 39m 11s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_prev_button_to_previous_date - 2019.02.20 at 19h 02m 06s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_prev_button_to_previous_date" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 42m 59s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.20 at 19h 11m 41s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 43m 45s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.20 at 19h 12m 09s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 45m 15s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -364,7 +364,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" weight="0.3306189" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007837" side_tool="true" weight="0.3306189" />
@@ -372,7 +372,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4992163" visible="true" weight="0.31758958" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4992163" visible="true" weight="0.31758958" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.40716612" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -504,16 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -538,6 +528,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sample.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -550,8 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="318">
+          <caret line="133" column="39" lean-forward="true" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -560,8 +560,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        <state relative-caret-position="321">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

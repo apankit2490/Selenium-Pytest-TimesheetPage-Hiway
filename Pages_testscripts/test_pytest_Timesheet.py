@@ -58,7 +58,9 @@ class Test_timesheet:
     #     project_code=self.driver.find_element_by_xpath('//*[@id="input-432"]').click()
     #     time.sleep(10)
     def test_add_task(self):
-        self.timesheet.create_entry_complete()
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(desc='testing from testcase')
+        assert self.timesheet.get_slno_from_display() == '1.'
 
 
 
