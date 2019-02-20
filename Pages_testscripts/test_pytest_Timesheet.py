@@ -54,8 +54,13 @@ class Test_timesheet:
             prev_date=now-timedelta(days=i)
             assert prev_date.strftime("%a, %b %d") in date
     def test_colorchange_orange_blue_after8hrs(self):
-        '''make entry
-        check orange color
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
+        assert '#FF5722' == self.init_color
+
+
+        '''check orange color
         increase time
         check color'''
     def test_add_task(self):

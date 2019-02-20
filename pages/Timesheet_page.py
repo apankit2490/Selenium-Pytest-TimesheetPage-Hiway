@@ -14,8 +14,8 @@ from pages.Hiway_page import Hiway_page
 
 class Timesheet_page:
     # test_driver=Driver().get_driver()
-    def __init__(self):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
-        # self.driver=driver
+    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+        self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
         self.locator_name_in_email='span.username-position.hide-sm.hide-xs.ng-binding.ng-scope'
@@ -115,7 +115,7 @@ class Timesheet_page:
 
     def get_color_rgb_value(self):
         self.color=self.driver.find_element_by_css_selector(self.locator_color_header).value_of_css_property('background-color')
-        return self.color
+        return str(self.color)
 
     def delete_task(self):
         while(True):
@@ -141,11 +141,11 @@ class Timesheet_page:
             found = m.group(1)
         r,g,b=found.split(',')
         return rgb2hex(int(r),int(g),int(b))
-    # def get_task_description(self):
 
 
-obj=Timesheet_page()
-obj.get_hexcode_from_rgb('rgb(255,64,129)')
+
+# obj=Timesheet_page()
+# obj.get_hexcode_from_rgb('rgb(255,64,129)')
 # Page_Login(obj.driver).login_complete()
 # Hiway_page(obj.driver).click_on_Continue()
 # obj.timesheet_page()

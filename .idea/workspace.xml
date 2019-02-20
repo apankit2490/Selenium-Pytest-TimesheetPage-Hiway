@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+            <state relative-caret-position="219">
+              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -87,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Highway_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="187">
               <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -96,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="69">
+              <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -168,12 +170,12 @@
         <option value="$PROJECT_DIR$/pages/Login_page.py" />
         <option value="$PROJECT_DIR$/Pages_testscripts/test_Login_page.py" />
         <option value="$PROJECT_DIR$/Sample.py" />
-        <option value="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" />
         <option value="$PROJECT_DIR$/pages/Timesheet_page.py" />
+        <option value="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="27" />
     <option name="width" value="1299" />
@@ -235,7 +237,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Timesheet_page">
+  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs">
     <configuration name="Sample" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -293,7 +295,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_prev_button_to_previous_date" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,7 +306,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_prev_button_to_previous_date&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -325,11 +327,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" />
         <item itemvalue="Python.Timesheet_page" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" />
         <item itemvalue="Python.Sample" />
         <item itemvalue="Python tests.pytest in test_Login_page.py" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_prev_button_to_previous_date" />
       </list>
     </recent_temporary>
   </component>
@@ -472,16 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Highway_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/support/select.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -537,16 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -567,16 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/colormap/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -587,12 +559,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Highway_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="69">
+          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
