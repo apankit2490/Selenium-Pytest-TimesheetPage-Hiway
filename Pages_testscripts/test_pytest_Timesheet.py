@@ -53,10 +53,11 @@ class Test_timesheet:
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
             assert prev_date.strftime("%a, %b %d") in date
-    # def test_colorchange_orange_blue_after8hrs(self):
-    #     time.sleep(10)
-    #     project_code=self.driver.find_element_by_xpath('//*[@id="input-432"]').click()
-    #     time.sleep(10)
+    def test_colorchange_orange_blue_after8hrs(self):
+        '''make entry
+        check orange color
+        increase time
+        check color'''
     def test_add_task(self):
         self.timesheet.delete_task()
         self.timesheet.create_entry_complete(desc='testing from testcase')

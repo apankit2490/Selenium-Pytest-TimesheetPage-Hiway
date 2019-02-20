@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+            <state relative-caret-position="185">
+              <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -328,12 +327,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 30m 14s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 30m 46s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 32m 30s.xml">
       <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
@@ -358,6 +351,12 @@
     <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 45m 15s.xml">
       <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 51m 35s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_task - 2019.02.21 at 01h 52m 39s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -366,13 +365,13 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" weight="0.3306189" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" visible="true" weight="0.3306189" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007837" side_tool="true" weight="0.3306189" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4992163" visible="true" weight="0.31758958" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4992163" weight="0.31758958" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.40716612" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -560,8 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+        <state relative-caret-position="185">
+          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
