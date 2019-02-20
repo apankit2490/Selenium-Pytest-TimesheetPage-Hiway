@@ -11,8 +11,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    # test_driver=Driver().get_driver()
-    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    test_driver=Driver().get_driver()
+    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -103,6 +103,11 @@ class Timesheet_page:
         self.create_entry_mins(mins)
         self.create_entry_description(desc)
         self.create_entry_hit_add()
+
+    def get_color_rgb_value(self):
+        self.color=self.driver.find_element_by_css_selector('.md-container.md-mode-determinate').value_of_css_property('background-color')
+        return self.color
+
 
 
 
