@@ -41,7 +41,7 @@ class Test_timesheet:
 
 
     def test_default_currentdate(self):
-        assert now.strftime("%Y-%m-%d") in self.timesheet.get_current_url()
+        assert now.strftime("%a %b %d") in self.timesheet.get_current_date()
 
 
     def test_next_button_disabled(self):
@@ -50,9 +50,9 @@ class Test_timesheet:
     def test_prev_button_to_previous_date(self):
         for i in range(1,4):
             self.timesheet.click_previous_button()
-            url = self.timesheet.get_current_url()
+            date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
-            assert prev_date.strftime("%Y-%m-%d") in url
+            assert prev_date.strftime("%a %b %d") in date
     # def test_colorchange_orange_blue_after8hrs(self):
     #     time.sleep(10)
     #     project_code=self.driver.find_element_by_xpath('//*[@id="input-432"]').click()
