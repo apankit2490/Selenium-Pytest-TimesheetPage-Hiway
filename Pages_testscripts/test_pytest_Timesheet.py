@@ -6,6 +6,7 @@ import pytest
 
 from Utility.constants import *
 from pages import Timesheet_page
+from pages.Dashboard import Dashboard_Page
 from pages.Driver import Driver
 from pages.Hiway_page import Hiway_page
 from pages.Timesheet_page import Timesheet_page
@@ -27,7 +28,8 @@ class Test_timesheet:
         cls.hiway = Hiway_page(cls.driver)
         cls.hiway.click_on_Continue()
         cls.timesheet=Timesheet_page(cls.driver)
-        cls.timesheet.timesheet_page()
+        cls.dashboard=Dashboard_Page(cls.driver)
+        cls.dashboard.navigate_to_timesheet_page()
 
 
     @classmethod
@@ -54,6 +56,7 @@ class Test_timesheet:
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
             assert prev_date.strftime(assert_date_format) in date
+
     def test_colorchange_orange_blue_after8hrs(self):
         self.timesheet.delete_task()
         self.timesheet.create_entry_complete(hours=six_hours)
@@ -79,8 +82,8 @@ class Test_timesheet:
 
     def test_delete(self):
         self.timesheet.delete_task()
-        # message=self.timesheet.get_delete_status()
-        # assert message == delete_message
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
 
     def test_working_hours_added(self):
         self.timesheet.delete_task()
@@ -106,6 +109,24 @@ class Test_timesheet:
         self.timesheet.create_entry_description('')
         assert False == self.timesheet.get_add_button_createtask_clickable_status()
 
+    def test_task_entry_suggested(self):
+        self.timesheet.logout()
+        self.timesheet.login_as_testuser()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.delete_task()
+        self.timesheet.save_sharedwith_complete(my_name)
+        self.timesheet.logout()
+        self.login.login_complete()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        suggested_username=self.timesheet.get_name_from_suggested_entry()
+        assert test_userID_name in suggested_username
+
+    def test_freeze_message(self):
+        self.timesheet.datepicker_navigate_to_specified_date(specified_date)
+        msg=self.timesheet.get_freeze_message()
+        assert freeze_message in msg
 
 
 

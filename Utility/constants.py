@@ -14,3 +14,7 @@ shared_with_username='ashish'
 test_username='hiwaytest@hashedin.com'
 test_password='Hiway@123'
 google_url='https://www.google.com/'
+test_userID_name='hiwaytest'
+my_name='ankit'
+specified_date="Mon, Feb 18"
+freeze_message='Timesheet older than 2 or more days cannot be updated. Contact your reporting manager for assistance.'

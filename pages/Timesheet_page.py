@@ -1,7 +1,11 @@
+import datetime
 import re
 import time
 
 from colormap import rgb2hex
+from selenium.webdriver.common.keys import Keys
+now = datetime.datetime.now()
+from pages.Login_page import Page_Login
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -16,8 +20,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    test_driver=Driver().get_driver()
-    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    # test_driver=Driver().get_driver()
+    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -47,6 +51,7 @@ class Timesheet_page:
         self.locator_logout_username='//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a'
         self.locator_google_my_avtaar='//*[@id="gbw"]/div/div/div[2]/div[4]/div[1]/a/span'
         self.locator_google_signout='//*[@id="gb_71"]'
+        self.locator_freeze_message='//div/div/div[@ng-if="editable && !unfreeze"]/i[@class="ng-binding"]'
 
 
 
@@ -132,17 +137,16 @@ class Timesheet_page:
 
     def delete_task(self):
         while(True):
-            # try:
+            try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                element = WebDriverWait(self.driver, 5).until(
-                    EC.visibility_of((By.XPATH, '/html/body/md-content/md-toast/div/span')))
-                element = WebDriverWait(self.driver, 5).until(
-            EC.invisibility_of_element((By.XPATH, '/html/body/md-content/md-toast/div/span')))
-                # time.sleep(3)
+                element = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+                element = WebDriverWait(self.driver, 10).until_not(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
 
 
-            # except:
-            #     return
+            except:
+                return
 
     def get_slno_from_display(self):
         time.sleep(5)
@@ -177,7 +181,7 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH,self.locator_sharedwith_select_users_hidden_popups)))
 
-    def enter_name_sharedwith(self):
+    def enter_name_sharedwith(self,name=shared_with_username):
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         select_users=self.driver.find_element_by_xpath(self.locator_sharedwith_select_users_hidden_popups)
@@ -187,7 +191,7 @@ class Timesheet_page:
                 EC.presence_of_element_located((By.XPATH, self.locator_username_autocomplete)))
         except:
             pass
-        for i in shared_with_username:
+        for i in name:
             select_users.send_keys(i)
         user=self.driver.find_element_by_xpath(self.locator_username_autocomplete).click()
 
@@ -196,6 +200,16 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+        element = WebDriverWait(self.driver, 10).until_not(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+
+    def save_sharedwith_complete(self,name=shared_with_username):
+        self.create_entry_complete()
+        self.click_shared_with()
+        self.enter_name_sharedwith(name)
+        self.save_sharedwith_entry()
 
     def get_name_from_sharedwith_entry(self):
         # time.sleep(5)
@@ -205,33 +219,46 @@ class Timesheet_page:
     def get_add_button_createtask_clickable_status(self):
         return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
 
+    def clear_browser_cache_and_cookies(self):
+        self.driver.get('chrome://settings/clearBrowserData')
+        self.driver.switch_to_active_element()
+        self.driver.find_element_by_tag_name('settings-ui').send_keys(Keys.ENTER)
+        # time.sleep(5)
+        self.driver.get(Driver().home_url)
+
+    def signout_from_google(self):
+        self.driver.get(google_url)
+        self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
+        self.driver.find_element_by_xpath(self.locator_google_signout).click()
+
     def logout(self):
+        # try:
+        #     if(self.driver.find_element_by_xpath('/html/body/md-content/md-toast/div/button/span').is_enabled()):
+        #         element = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH,'/html/body/md-content/md-toast/div/button/span')))
+        # except:
+        #     pass
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR,self.locator_logout_button)))
         username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH,self.locator_logout_username)))
         logout_button = self.driver.find_element_by_xpath(self.locator_logout_username).click()
-        self.driver.get(google_url)
-        self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
-        self.driver.find_element_by_xpath(self.locator_google_signout).click()
+        self.signout_from_google()
+        self.clear_browser_cache_and_cookies()
 
+    def login_as_testuser(self):
+        Page_Login(self.driver).login_complete(test_username,test_password)
 
+    def get_name_from_suggested_entry(self):
+        name=self.driver.find_element_by_partial_link_text(test_userID_name).text
+        return str(name)
 
+    def datepicker_navigate_to_specified_date(self,specified_date):
+        while True:
+            self.click_previous_button()
+            date = self.get_current_date()
+            if (date==specified_date):
+                break
 
-
-
-
-
-
-
-
-
-
-
-# obj=Timesheet_page()
-# obj.get_hexcode_from_rgb('rgb(255,64,129)')
-# Page_Login(obj.driver).login_complete()
-# Hiway_page(obj.driver).click_on_Continue()
-# obj.timesheet_page()
-# obj.create_entry()
+    def get_freeze_message(self):
+        return str(self.driver.find_element_by_xpath(self.locator_freeze_message).text)
 
