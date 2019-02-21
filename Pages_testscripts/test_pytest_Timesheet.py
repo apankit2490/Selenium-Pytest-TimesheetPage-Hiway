@@ -32,10 +32,10 @@ class Test_timesheet:
         cls.dashboard.navigate_to_timesheet_page()
 
 
-    # @classmethod
-    # def teardown_method(self):
-    #     # self.login.logout(self.driver)
-    #     self.driver.close()
+    @classmethod
+    def teardown_method(self):
+        # self.login.logout(self.driver)
+        self.driver.close()
 
     def test_name_on_timesheet(self):
         header_displayed=self.timesheet.get_name_in_header()
@@ -56,6 +56,7 @@ class Test_timesheet:
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
             assert prev_date.strftime(assert_date_format) in date
+
     def test_colorchange_orange_blue_after8hrs(self):
         self.timesheet.delete_task()
         self.timesheet.create_entry_complete(hours=six_hours)
@@ -81,8 +82,8 @@ class Test_timesheet:
 
     def test_delete(self):
         self.timesheet.delete_task()
-        # message=self.timesheet.get_delete_status()
-        # assert message == delete_message
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
 
     def test_working_hours_added(self):
         self.timesheet.delete_task()
@@ -114,13 +115,16 @@ class Test_timesheet:
         self.hiway.click_on_Continue()
         self.dashboard.navigate_to_timesheet_page()
         self.timesheet.delete_task()
-        self.timesheet.save_sharedwith_complete('ankit')
+        self.timesheet.save_sharedwith_complete(my_name)
         self.timesheet.logout()
         self.login.login_complete()
         self.hiway.click_on_Continue()
         self.dashboard.navigate_to_timesheet_page()
         suggested_username=self.timesheet.get_name_from_suggested_entry()
         assert test_userID_name in suggested_username
+
+
+
 
 
 if __name__=='__main__':

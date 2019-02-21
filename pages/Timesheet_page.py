@@ -1,9 +1,10 @@
+import datetime
 import re
 import time
 
 from colormap import rgb2hex
 from selenium.webdriver.common.keys import Keys
-
+now = datetime.datetime.now()
 from pages.Login_page import Page_Login
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
@@ -50,6 +51,7 @@ class Timesheet_page:
         self.locator_logout_username='//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a'
         self.locator_google_my_avtaar='//*[@id="gbw"]/div/div/div[2]/div[4]/div[1]/a/span'
         self.locator_google_signout='//*[@id="gb_71"]'
+        self.locator_freeze_message='//div/div/div[@ng-if="editable && !unfreeze"]/i[@class="ng-binding"]'
 
 
 
@@ -137,11 +139,10 @@ class Timesheet_page:
         while(True):
             try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                # element = WebDriverWait(self.driver, 5).until(
-                #     EC.visibility_of((By.XPATH, '/html/body/md-content/md-toast/div/span')))
-            #     element = WebDriverWait(self.driver, 5).until(
-            # EC.invisibility_of_element((By.XPATH, '/html/body/md-content/md-toast/div/span')))
-                time.sleep(3)
+                element = WebDriverWait(self.driver, 10).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+                element = WebDriverWait(self.driver, 10).until_not(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
 
 
             except:
@@ -251,27 +252,12 @@ class Timesheet_page:
         name=self.driver.find_element_by_partial_link_text(test_userID_name).text
         return str(name)
 
+    def datepicker_navigate_to_specified_date(self,specified_date):
+        while True:
+            self.click_previous_button()
+            date = self.get_current_date()
+            if (date==specified_date):
+                break
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# obj=Timesheet_page()
-# obj.get_hexcode_from_rgb('rgb(255,64,129)')
-# Page_Login(obj.driver).login_complete()
-# Hiway_page(obj.driver).click_on_Continue()
-# obj.timesheet_page()
-# obj.create_entry()
 
