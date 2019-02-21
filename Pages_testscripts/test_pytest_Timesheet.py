@@ -29,13 +29,13 @@ class Test_timesheet:
         cls.hiway.click_on_Continue()
         cls.timesheet=Timesheet_page(cls.driver)
         cls.dashboard=Dashboard_Page(cls.driver)
-        cls.dashboard.navigate_to_dashboard_page()
+        cls.dashboard.navigate_to_timesheet_page()
 
 
-    @classmethod
-    def teardown_method(self):
-        # self.login.logout(self.driver)
-        self.driver.close()
+    # @classmethod
+    # def teardown_method(self):
+    #     # self.login.logout(self.driver)
+    #     self.driver.close()
 
     def test_name_on_timesheet(self):
         header_displayed=self.timesheet.get_name_in_header()
@@ -111,13 +111,16 @@ class Test_timesheet:
     def test_task_entry_suggested(self):
         self.timesheet.logout()
         self.timesheet.login_as_testuser()
-        self.dashboard.navigate_to_dashboard_page()
-        self.timesheet.timesheet_page()
-
-
-
-
-
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.delete_task()
+        self.timesheet.save_sharedwith_complete('ankit')
+        self.timesheet.logout()
+        self.login.login_complete()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        suggested_username=self.timesheet.get_name_from_suggested_entry()
+        assert test_userID_name in suggested_username
 
 
 if __name__=='__main__':

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utility/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utility/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Dashboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="103" column="12" lean-forward="true" selection-start-line="110" selection-start-column="11" selection-end-line="114" selection-end-column="13" />
+            <state relative-caret-position="123">
+              <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -29,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Dashboard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="136">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -38,20 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utility/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="10" selection-start-line="15" selection-end-line="15" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="16" column="16" selection-start-line="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -119,11 +108,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="24" column="86" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="86" />
+            <state relative-caret-position="140">
+              <caret line="204" column="62" selection-start-line="204" selection-start-column="62" selection-end-line="204" selection-end-column="62" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webelement.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
             </state>
           </provider>
         </entry>
@@ -154,6 +152,7 @@
       <find>hit</find>
       <find>enab</find>
       <find>logo</find>
+      <find>tear</find>
     </findStrings>
     <replaceStrings>
       <replace>driver.self</replace>
@@ -183,12 +182,12 @@
         <option value="$PROJECT_DIR$/Utility/csv_loader.py" />
         <option value="$PROJECT_DIR$/data/test_data_invalid_cedentials.csv" />
         <option value="$PROJECT_DIR$/Pages_testscripts/test_Login_page.py" />
-        <option value="$PROJECT_DIR$/Utility/constants.py" />
         <option value="$PROJECT_DIR$/pages/Login_page.py" />
         <option value="$PROJECT_DIR$/Sample.py" />
-        <option value="$PROJECT_DIR$/pages/Timesheet_page.py" />
         <option value="$PROJECT_DIR$/pages/Dashboard.py" />
+        <option value="$PROJECT_DIR$/Utility/constants.py" />
         <option value="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" />
+        <option value="$PROJECT_DIR$/pages/Timesheet_page.py" />
       </list>
     </option>
   </component>
@@ -271,7 +270,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable">
+  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested">
     <configuration name="Sample" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -338,7 +337,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_working_hours_added" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,17 +348,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_working_hours_added&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" />
         <item itemvalue="Python.Sample" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_delete" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_sharedwith_entry" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_working_hours_added" />
       </list>
     </recent_temporary>
   </component>
@@ -377,35 +376,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_button_unclickable - 2019.02.21 at 19h 41m 03s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 06m 50s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_button_unclickable - 2019.02.21 at 19h 42m 55s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 11m 10s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_button_unclickable - 2019.02.21 at 19h 43m 33s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 17m 28s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.21 at 20h 30m 10s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 19m 23s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.21 at 20h 31m 34s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 21m 18s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.21 at 20h 33m 20s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 33m 09s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.21 at 20h 34m 41s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 39m 13s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.21 at 20h 38m 10s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 40m 42s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.21 at 20h 38m 42s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 55m 19s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_add_button_unclickable - 2019.02.22 at 00h 33m 01s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 59m 32s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -560,16 +559,6 @@
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Hiway_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -577,24 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webelement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/support/wait.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Utility/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="10" selection-start-line="15" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -655,27 +630,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
+    <entry file="file://$PROJECT_DIR$/pages/Hiway_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="24" column="86" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="86" />
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/Dashboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="136">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utility/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" selection-start-line="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="204" column="62" selection-start-line="204" selection-start-column="62" selection-end-line="204" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="103" column="12" lean-forward="true" selection-start-line="110" selection-start-column="11" selection-end-line="114" selection-end-column="13" />
+        <state relative-caret-position="123">
+          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

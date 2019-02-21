@@ -6,7 +6,7 @@ class Dashboard_Page:
         self.driver=driver
         self.locator_timesheet_button = '/html/body/div/md-toolbar/div/div[2]/span[4]/a'
 
-    def navigate_to_dashboard_page(self):
+    def navigate_to_timesheet_page(self):
         time.sleep(5)
         timesheet = self.driver.find_element_by_xpath(self.locator_timesheet_button).click()
         time.sleep(3)

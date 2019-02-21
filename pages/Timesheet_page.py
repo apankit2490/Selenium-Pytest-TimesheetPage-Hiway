@@ -180,7 +180,7 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH,self.locator_sharedwith_select_users_hidden_popups)))
 
-    def enter_name_sharedwith(self):
+    def enter_name_sharedwith(self,name=shared_with_username):
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         select_users=self.driver.find_element_by_xpath(self.locator_sharedwith_select_users_hidden_popups)
@@ -190,7 +190,7 @@ class Timesheet_page:
                 EC.presence_of_element_located((By.XPATH, self.locator_username_autocomplete)))
         except:
             pass
-        for i in shared_with_username:
+        for i in name:
             select_users.send_keys(i)
         user=self.driver.find_element_by_xpath(self.locator_username_autocomplete).click()
 
@@ -199,6 +199,16 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+        element = WebDriverWait(self.driver, 10).until_not(
+            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+
+    def save_sharedwith_complete(self,name=shared_with_username):
+        self.create_entry_complete()
+        self.click_shared_with()
+        self.enter_name_sharedwith(name)
+        self.save_sharedwith_entry()
 
     def get_name_from_sharedwith_entry(self):
         # time.sleep(5)
@@ -207,6 +217,7 @@ class Timesheet_page:
 
     def get_add_button_createtask_clickable_status(self):
         return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
+
     def clear_browser_cache_and_cookies(self):
         self.driver.get('chrome://settings/clearBrowserData')
         self.driver.switch_to_active_element()
@@ -220,6 +231,11 @@ class Timesheet_page:
         self.driver.find_element_by_xpath(self.locator_google_signout).click()
 
     def logout(self):
+        # try:
+        #     if(self.driver.find_element_by_xpath('/html/body/md-content/md-toast/div/button/span').is_enabled()):
+        #         element = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH,'/html/body/md-content/md-toast/div/button/span')))
+        # except:
+        #     pass
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR,self.locator_logout_button)))
         username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
@@ -230,6 +246,10 @@ class Timesheet_page:
 
     def login_as_testuser(self):
         Page_Login(self.driver).login_complete(test_username,test_password)
+
+    def get_name_from_suggested_entry(self):
+        name=self.driver.find_element_by_partial_link_text(test_userID_name).text
+        return str(name)
 
 
 
