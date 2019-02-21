@@ -108,10 +108,10 @@ class Timesheet_page:
         # time.sleep(3)
         add=self.driver.find_element_by_xpath(self.locator_hit_add).click()
 
-    def create_entry_complete(self,text='ARU-CCUI-DEL',hours='6',mins='25',desc='default desc'):
+    def create_entry_complete(self,text='ARU-CCUI-DEL',type="Debug",hours='6',mins='25',desc='default desc'):
         self.driver.implicitly_wait(3)
         self.create_entry_projectcode(text)
-        self.create_entry_type()
+        self.create_entry_type(type)
         self.create_entry_hours(hours)
         self.create_entry_mins(mins)
         self.create_entry_description(desc)
@@ -194,6 +194,11 @@ class Timesheet_page:
         # time.sleep(5)
         name=self.driver.find_element_by_partial_link_text(self.locator_sharedwith_user_name).text
         return str(name)
+
+    def check_add_button_createtask_clickable(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.locator_hit_add)))
+        return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
 
 
 

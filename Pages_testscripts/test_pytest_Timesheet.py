@@ -97,6 +97,15 @@ class Test_timesheet:
         sharedwith_name=self.timesheet.get_name_from_sharedwith_entry()
         assert shared_with_username in sharedwith_name
 
+    def test_add_button_unclickable(self):
+        self.timesheet.delete_task()
+        self.create_entry_projectcode('')
+        self.create_entry_type('')
+        self.create_entry_hours('')
+        self.create_entry_mins('')
+        self.create_entry_description('')
+
+
 
 
 
