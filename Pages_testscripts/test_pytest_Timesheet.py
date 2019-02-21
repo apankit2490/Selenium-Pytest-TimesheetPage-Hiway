@@ -128,6 +128,11 @@ class Test_timesheet:
         msg=self.timesheet.get_freeze_message()
         assert freeze_message in msg
 
+    def test_empty_timesheet_message(self):
+        self.timesheet.delete_task()
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
+
 
 
 if __name__=='__main__':
