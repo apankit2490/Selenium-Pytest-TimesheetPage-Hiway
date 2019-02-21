@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="" />
+    <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="128" column="36" lean-forward="true" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+            <state relative-caret-position="343">
+              <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -141,7 +143,6 @@
       <find>get</find>
       <find>time.s</find>
       <find>date</find>
-      <find>delete</find>
       <find>until</find>
       <find>hit</find>
       <find>enab</find>
@@ -149,6 +150,7 @@
       <find>tear</find>
       <find>prev</find>
       <find>dele</find>
+      <find>delete</find>
     </findStrings>
     <replaceStrings>
       <replace>driver.self</replace>
@@ -366,9 +368,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 21m 18s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 33m 09s.xml">
       <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
@@ -396,9 +395,13 @@
     <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_freeze_message - 2019.02.22 at 02h 34m 15s.xml">
       <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_freeze_message" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_empty_timesheet_message - 2019.02.22 at 02h 39m 25s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_empty_timesheet_message" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20219436" />
@@ -662,8 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="128" column="36" lean-forward="true" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
+        <state relative-caret-position="343">
+          <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

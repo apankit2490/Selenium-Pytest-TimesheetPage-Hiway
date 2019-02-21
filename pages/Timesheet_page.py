@@ -52,7 +52,10 @@ class Timesheet_page:
         self.locator_google_my_avtaar='//*[@id="gbw"]/div/div/div[2]/div[4]/div[1]/a/span'
         self.locator_google_signout='//*[@id="gb_71"]'
         self.locator_freeze_message='//div/div/div[@ng-if="editable && !unfreeze"]/i[@class="ng-binding"]'
-
+        self.locator_toast_div='div.md-toast-content'
+        self.locator_toast_message='//md-content/md-toast/div[@class="md-toast-content"]/span[@class="md-toast-text ng-binding"]'
+        self.locator_chrome_cleardata='chrome://settings/clearBrowserData'
+        self.locator_hit_enter_in_cleardata_screen='settings-ui'
 
 
     def timesheet_page(self):
@@ -140,9 +143,9 @@ class Timesheet_page:
             try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
                 element = WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+                    EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
                 element = WebDriverWait(self.driver, 10).until_not(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+                    EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
 
 
             except:
@@ -201,9 +204,9 @@ class Timesheet_page:
             EC.element_to_be_clickable((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).click()
         element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+            EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
         element = WebDriverWait(self.driver, 10).until_not(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div.md-toast-content')))
+            EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
 
     def save_sharedwith_complete(self,name=shared_with_username):
         self.create_entry_complete()
@@ -220,10 +223,9 @@ class Timesheet_page:
         return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
 
     def clear_browser_cache_and_cookies(self):
-        self.driver.get('chrome://settings/clearBrowserData')
+        self.driver.get(self.locator_chrome_cleardata)
         self.driver.switch_to_active_element()
-        self.driver.find_element_by_tag_name('settings-ui').send_keys(Keys.ENTER)
-        # time.sleep(5)
+        self.driver.find_element_by_tag_name(self.locator_hit_enter_in_cleardata_screen).send_keys(Keys.ENTER)
         self.driver.get(Driver().home_url)
 
     def signout_from_google(self):
@@ -261,4 +263,13 @@ class Timesheet_page:
 
     def get_freeze_message(self):
         return str(self.driver.find_element_by_xpath(self.locator_freeze_message).text)
+
+    def get_message_from_toast(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
+        msg=self.driver.find_element_by_xpath(self.locator_toast_message).text
+        element = WebDriverWait(self.driver, 10).until_not(
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
+        return str(msg)
+
 
