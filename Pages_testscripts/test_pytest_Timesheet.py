@@ -82,6 +82,9 @@ class Test_timesheet:
         message=self.timesheet.get_delete_status()
         assert message == delete_message
 
+    def test_working_hours_added(self):
+
+
 
 
 
