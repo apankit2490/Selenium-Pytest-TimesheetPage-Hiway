@@ -88,6 +88,14 @@ class Test_timesheet:
         working_hours=self.timesheet.get_working_hours_from_header()
         assert six_hours in working_hours
 
+    def test_sharedwith_entry(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.timesheet.click_shared_with()
+        self.timesheet.enter_name_sharedwith()
+        self.timesheet.save_sharedwith_entry()
+        sharedwith_name=self.timesheet.get_name_from_sharedwith_entry()
+        assert shared_with_username in sharedwith_name
 
 
 
