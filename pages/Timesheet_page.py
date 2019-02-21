@@ -259,5 +259,6 @@ class Timesheet_page:
             if (date==specified_date):
                 break
 
-
+    def get_freeze_message(self):
+        return str(self.driver.find_element_by_xpath(self.locator_freeze_message).text)
 
