@@ -79,8 +79,32 @@ class Test_timesheet:
 
     def test_delete(self):
         self.timesheet.delete_task()
-        message=self.timesheet.get_delete_status()
-        assert message == delete_message
+        # message=self.timesheet.get_delete_status()
+        # assert message == delete_message
+
+    def test_working_hours_added(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=six_hours)
+        working_hours=self.timesheet.get_working_hours_from_header()
+        assert six_hours in working_hours
+
+    def test_sharedwith_entry(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.timesheet.click_shared_with()
+        self.timesheet.enter_name_sharedwith()
+        self.timesheet.save_sharedwith_entry()
+        sharedwith_name=self.timesheet.get_name_from_sharedwith_entry()
+        assert shared_with_username in sharedwith_name
+
+    def test_add_button_unclickable(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_projectcode('')
+        self.timesheet.create_entry_type('')
+        self.timesheet.create_entry_hours('')
+        self.timesheet.create_entry_mins('')
+        self.timesheet.create_entry_description('')
+        assert False == self.timesheet.get_add_button_createtask_clickable_status()
 
 
 

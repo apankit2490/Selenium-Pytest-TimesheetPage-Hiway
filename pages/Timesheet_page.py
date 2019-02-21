@@ -7,6 +7,8 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+
+from Utility.constants import *
 from pages.Driver import Driver
 from pages.Login_page import Page_Login
 from pages.Hiway_page import Hiway_page
@@ -14,8 +16,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    # test_driver=Driver().get_driver()
-    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    test_driver=Driver().get_driver()
+    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -36,12 +38,22 @@ class Timesheet_page:
         self.locator_description_from_display='//form//div//md-input-container/input[@ng-model="entry.description"]'
         self.locator_sl_no='//div/div/form/div[1]/div[1]/div[1]/div[1]'
         self.locator_after_delete_msg='/html/body/md-content/div/div/div[5]/i'
+        self.locator_sharedwith_select_users_hidden_popups= '//md-autocomplete-wrap/input[@placeholder="Select Users"]'
+        self.locator_shared_with_button='//div/div/form/div[1]/div[2]/span[2]/a/b'
+        self.locator_sharedwith_user_name=shared_with_username
+        self.locator_sharedwith_save_button='#user-select-modal-save-button'
+        self.locator_username_autocomplete='//li/md-autocomplete-parent-scope/div[@class="ng-binding"]'
+        self.locator_logout_button='span.username-position.hide-sm.hide-xs.ng-binding.ng-scope'
+        self.locator_logout_username='//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a'
+        self.locator_google_my_avtaar='//*[@id="gbw"]/div/div/div[2]/div[4]/div[1]/a/span'
+        self.locator_google_signout='//*[@id="gb_71"]'
 
 
 
     def timesheet_page(self):
         time.sleep(5)
         timesheet = self.driver.find_element_by_xpath(self.locator_timesheet_button).click()
+        time.sleep(3)
 
     def get_name_in_header(self):
         element = WebDriverWait(self.driver, 10).until(
@@ -101,10 +113,10 @@ class Timesheet_page:
         # time.sleep(3)
         add=self.driver.find_element_by_xpath(self.locator_hit_add).click()
 
-    def create_entry_complete(self,text='ARU-CCUI-DEL',hours='6',mins='25',desc='default desc'):
+    def create_entry_complete(self,text='ARU-CCUI-DEL',type="Debug",hours='6',mins='25',desc='default desc'):
         self.driver.implicitly_wait(3)
         self.create_entry_projectcode(text)
-        self.create_entry_type()
+        self.create_entry_type(type)
         self.create_entry_hours(hours)
         self.create_entry_mins(mins)
         self.create_entry_description(desc)
@@ -120,15 +132,17 @@ class Timesheet_page:
 
     def delete_task(self):
         while(True):
-            try:
-                element = WebDriverWait(self.driver, 5).until(
-                    EC.visibility_of_element_located((By.XPATH,self.locator_delete_button)))
+            # try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                time.sleep(3)
+                element = WebDriverWait(self.driver, 5).until(
+                    EC.visibility_of((By.XPATH, '/html/body/md-content/md-toast/div/span')))
+                element = WebDriverWait(self.driver, 5).until(
+            EC.invisibility_of_element((By.XPATH, '/html/body/md-content/md-toast/div/span')))
+                # time.sleep(3)
 
 
-            except:
-                return
+            # except:
+            #     return
 
     def get_slno_from_display(self):
         time.sleep(5)
@@ -150,6 +164,65 @@ class Timesheet_page:
             return str(message.text)
         except NoSuchElementException:
             return None
+
+    def get_working_hours_from_header(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.locator_delete_button)))
+        text = str(self.driver.find_element_by_css_selector(self.locator_datepicker).text)
+        time = text[:5]
+        return time
+
+    def click_shared_with(self):
+        self.driver.find_element_by_xpath(self.locator_shared_with_button).click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH,self.locator_sharedwith_select_users_hidden_popups)))
+
+    def enter_name_sharedwith(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
+        select_users=self.driver.find_element_by_xpath(self.locator_sharedwith_select_users_hidden_popups)
+        select_users.click()
+        try:
+            element = WebDriverWait(self.driver, 1).until(
+                EC.presence_of_element_located((By.XPATH, self.locator_username_autocomplete)))
+        except:
+            pass
+        for i in shared_with_username:
+            select_users.send_keys(i)
+        user=self.driver.find_element_by_xpath(self.locator_username_autocomplete).click()
+
+    def save_sharedwith_entry(self):
+        # time.sleep(5)
+        element = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
+        save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).click()
+
+    def get_name_from_sharedwith_entry(self):
+        # time.sleep(5)
+        name=self.driver.find_element_by_partial_link_text(self.locator_sharedwith_user_name).text
+        return str(name)
+
+    def get_add_button_createtask_clickable_status(self):
+        return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
+
+    def logout(self):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
+                (By.CSS_SELECTOR,self.locator_logout_button)))
+        username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH,self.locator_logout_username)))
+        logout_button = self.driver.find_element_by_xpath(self.locator_logout_username).click()
+        self.driver.get(google_url)
+        self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
+        self.driver.find_element_by_xpath(self.locator_google_signout).click()
+
+
+
+
+
+
+
+
+
 
 
 
