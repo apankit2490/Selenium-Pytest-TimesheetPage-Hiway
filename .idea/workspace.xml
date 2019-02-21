@@ -4,7 +4,6 @@
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utility/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utility/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="52" column="17" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="17" />
+            <state relative-caret-position="297">
+              <caret line="141" column="39" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -47,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utility/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+            <state relative-caret-position="315">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -108,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
-              <caret line="53" column="105" selection-start-line="53" selection-start-column="105" selection-end-line="53" selection-end-column="105" />
+              <caret line="272" column="22" selection-start-line="272" selection-start-column="22" selection-end-line="272" selection-end-column="22" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -145,7 +144,6 @@
       <find>get</find>
       <find>time.s</find>
       <find>date</find>
-      <find>delete</find>
       <find>until</find>
       <find>hit</find>
       <find>enab</find>
@@ -153,6 +151,7 @@
       <find>tear</find>
       <find>prev</find>
       <find>dele</find>
+      <find>delete</find>
     </findStrings>
     <replaceStrings>
       <replace>driver.self</replace>
@@ -185,9 +184,9 @@
         <option value="$PROJECT_DIR$/pages/Login_page.py" />
         <option value="$PROJECT_DIR$/Sample.py" />
         <option value="$PROJECT_DIR$/pages/Dashboard.py" />
-        <option value="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" />
         <option value="$PROJECT_DIR$/pages/Timesheet_page.py" />
         <option value="$PROJECT_DIR$/Utility/constants.py" />
+        <option value="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" />
       </list>
     </option>
   </component>
@@ -231,11 +230,6 @@
               <item name="Selenium_automation" type="462c0819:PsiDirectoryNode" />
               <item name="Pages_testscripts" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Selenium_automation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selenium_automation" type="462c0819:PsiDirectoryNode" />
-              <item name="Utility" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -270,43 +264,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_freeze_message">
-    <configuration name="Sample" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Selenium_automation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sample.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_automation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_total_working_hrs_restriction">
     <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,6 +277,21 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_delete&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_empty_timesheet_message" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_empty_timesheet_message&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -352,13 +325,28 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_total_working_hrs_restriction" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_total_working_hrs_restriction&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_total_working_hrs_restriction" />
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_empty_timesheet_message" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_freeze_message" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_delete" />
         <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_button_unclickable" />
-        <item itemvalue="Python.Sample" />
       </list>
     </recent_temporary>
   </component>
@@ -376,12 +364,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 19m 23s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 21m 18s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 01h 33m 09s.xml">
       <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
     </history-entry>
@@ -406,21 +388,27 @@
     <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_delete - 2019.02.22 at 02h 16m 28s.xml">
       <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_delete" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_freeze_message - 2019.02.22 at 02h 34m 15s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_freeze_message" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_empty_timesheet_message - 2019.02.22 at 02h 39m 25s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_empty_timesheet_message" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20219436" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20219436" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" visible="true" weight="0.24104235" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" weight="0.24104235" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007837" side_tool="true" weight="0.3306189" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4992163" weight="0.34201956" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4992163" visible="true" weight="0.34201956" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.40716612" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -654,20 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="53" column="105" selection-start-line="53" selection-start-column="105" selection-end-line="53" selection-end-column="105" />
+          <caret line="272" column="22" selection-start-line="272" selection-start-column="22" selection-end-line="272" selection-end-column="22" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -676,8 +654,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utility/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="315">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="141" column="39" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

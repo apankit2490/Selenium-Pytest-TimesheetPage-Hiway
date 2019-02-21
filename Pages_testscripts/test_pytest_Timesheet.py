@@ -128,6 +128,21 @@ class Test_timesheet:
         msg=self.timesheet.get_freeze_message()
         assert freeze_message in msg
 
+    def test_empty_timesheet_message(self):
+        self.timesheet.delete_task()
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
+
+    def test_total_working_hrs_restriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        message=self.timesheet.get_message_from_toast()
+        assert total_hrs_msg in message
+
+
+
 
 
 if __name__=='__main__':
