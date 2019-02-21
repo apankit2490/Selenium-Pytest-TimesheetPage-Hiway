@@ -83,6 +83,10 @@ class Test_timesheet:
         assert message == delete_message
 
     def test_working_hours_added(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=six_hours)
+        working_hours=self.timesheet.get_working_hours_from_header()
+        assert six_hours in working_hours
 
 
 

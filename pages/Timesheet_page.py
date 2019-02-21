@@ -153,7 +153,7 @@ class Timesheet_page:
 
     def get_working_hours_from_header(self):
         element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, self.locator_datepicker)))
+            EC.presence_of_element_located((By.XPATH, self.locator_delete_button)))
         text = str(self.driver.find_element_by_css_selector(self.locator_datepicker).text)
         time = text[:5]
         return time
