@@ -55,14 +55,22 @@ class Test_timesheet:
             assert prev_date.strftime("%a, %b %d") in date
     def test_colorchange_orange_blue_after8hrs(self):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete()
+        self.timesheet.create_entry_complete(hours='6')
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert '#FF5722' == self.init_color
+        self.timesheet.create_entry_complete(hours='2')
+        self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
+        assert '#3F51B5' == self.init_color
 
+    def test_colorchange_blue_pink_after9hrs(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours='8')
+        self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
+        assert '#3F51B5' == self.init_color
+        self.timesheet.create_entry_complete(hours='2')
+        self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
+        assert '#FF4081' == self.init_color
 
-        '''check orange color
-        increase time
-        check color'''
     def test_add_task(self):
         self.timesheet.delete_task()
         self.timesheet.create_entry_complete(desc='testing from testcase')

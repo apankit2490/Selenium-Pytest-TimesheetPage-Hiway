@@ -15,7 +15,7 @@ invalid_cred_path="/home/ankit_kumar/PycharmProjects/Selenium_automation/data/te
 class Test_login_page(unittest.TestCase):
 
     @classmethod
-    def setUp(cls):
+    def setUp_method(cls):
         cls.driver_object=Driver()
         cls.driver=cls.driver_object.get_driver()
         cls.login=Page_Login(cls.driver)

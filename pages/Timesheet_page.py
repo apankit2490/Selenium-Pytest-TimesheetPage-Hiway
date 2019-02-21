@@ -21,14 +21,14 @@ class Timesheet_page:
         self.locator_name_in_email='span.username-position.hide-sm.hide-xs.ng-binding.ng-scope'
         self.locator_next_button='/html/body/md-content/div/div/div[2]/button[2]'
         self.locator_previous_button='/html/body/md-content/div/div/div[2]/button[1]'
-        self.locator_project_code='//md-card//div/md-autocomplete/md-autocomplete-wrap/input'
+        self.locator_project_code='input[type="search"]'
         self.locator_project_code_dropdown='//ul/li[1]/md-autocomplete-parent-scope/span[1]/span'
         self.locator_datepicker='body > md-content > div > div > div.md-title.layout-align-space-between-center.layout-row > span'
-        self.locator_type_dropdown='//md-card/md-card-text/form/div//md-select'
+        self.locator_type_dropdown='//md-select[@ng-model="newEntry.type"]'
         self.locator_type_choice='//div[@class="md-select-menu-container md-active md-clickable"]/md-select-menu/md-content/md-option[1]/div'
-        self.locator_hours='//*/md-input-container/input[@name="newEntry.hrs"]'
-        self.locator_mins='//*/md-input-container/input[@name="newEntry.min"]'
-        self.locator_description='//*/md-input-container/input[@name="newEntry.description"]'
+        self.locator_hours='newEntry.hrs'
+        self.locator_mins='newEntry.min'
+        self.locator_description='newEntry.description'
         self.locator_hit_add= '/html/body/md-content/div/div/md-card/md-card-text/form/div[1]/button'
         self.locator_color_header='.md-bar.md-bar2'
         self.locator_delete_button='//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i'
@@ -61,51 +61,46 @@ class Timesheet_page:
             EC.visibility_of_element_located((By.XPATH, self.locator_next_button)))
         next_button = self.driver.find_element_by_xpath(self.locator_next_button).is_enabled()
         return next_button
+
     def click_previous_button(self):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.locator_previous_button)))
         prev_button = self.driver.find_element_by_xpath(self.locator_previous_button).click()
 
     def create_entry_projectcode(self,text='bat'):
-        element = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, self.locator_project_code)))
-        project_code=self.driver.find_element_by_xpath(self.locator_project_code)
+        project_code=self.driver.find_element_by_css_selector(self.locator_project_code)
+        project_code.clear()
         project_code.send_keys(text)
-        waittobeclickable = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH,self.locator_project_code_dropdown)))
-        self.driver.find_element_by_xpath(self.locator_project_code_dropdown).click()
 
-    def create_entry_type(self):
+    def create_entry_type(self,type="Debug"):
         element = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH,self.locator_type_dropdown)))
-        select=self.driver.find_element_by_xpath(self.locator_type_dropdown).click()
-        element = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, self.locator_type_choice)))
-        choice=self.driver.find_element_by_xpath(self.locator_type_choice).click()
+            EC.presence_of_element_located((By.XPATH,self.locator_type_dropdown)))
+        select=self.driver.find_element_by_xpath(self.locator_type_dropdown)
+        select.send_keys(type)
 
     def create_entry_hours(self,hours='05'):
         element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, self.locator_hours)))
-        self.hour=self.driver.find_element_by_xpath(self.locator_hours).send_keys(hours)
+            EC.visibility_of_element_located((By.NAME, self.locator_hours)))
+        self.hour=self.driver.find_element_by_name(self.locator_hours).send_keys(hours)
 
     def create_entry_mins(self,mins='30'):
         element = WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, self.locator_mins)))
-        self.mins=self.driver.find_element_by_xpath(self.locator_mins).send_keys(mins)
+            EC.visibility_of_element_located((By.NAME, self.locator_mins)))
+        self.mins=self.driver.find_element_by_name(self.locator_mins).send_keys(mins)
 
     def create_entry_description(self,description='default description'):
         # element = WebDriverWait(self.driver, 10).until(
         #     EC.visibility_of_element_located((By.XPATH, self.locator_description)))
-        self.description=self.driver.find_element_by_xpath(self.locator_description).send_keys(description)
+        self.description=self.driver.find_element_by_name(self.locator_description).send_keys(description)
 
     def create_entry_hit_add(self):
-        # element = WebDriverWait(self.driver, 10).until(
-        #     EC.visibility_of((By.CSS_SELECTOR, self.locator_hit_add)))
-        time.sleep(5)
+        element = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.locator_hit_add)))
+        # time.sleep(3)
         add=self.driver.find_element_by_xpath(self.locator_hit_add).click()
 
-    def create_entry_complete(self,text='bat',hours='6',mins='25',desc='default desc'):
-        self.driver.implicitly_wait(5)
+    def create_entry_complete(self,text='ARU-CCUI-DEL',hours='6',mins='25',desc='default desc'):
+        self.driver.implicitly_wait(3)
         self.create_entry_projectcode(text)
         self.create_entry_type()
         self.create_entry_hours(hours)
@@ -113,7 +108,11 @@ class Timesheet_page:
         self.create_entry_description(desc)
         self.create_entry_hit_add()
 
+
     def get_color_rgb_value(self):
+        # element = WebDriverWait(self.driver, 10).until(
+        #     EC.visibility_of((By.CSS_SELECTOR, self.locator_color_header)))
+        time.sleep(3)
         self.color=self.driver.find_element_by_css_selector(self.locator_color_header).value_of_css_property('background-color')
         return str(self.color)
 
@@ -123,7 +122,8 @@ class Timesheet_page:
                 element = WebDriverWait(self.driver, 10).until(
                     EC.visibility_of_element_located((By.XPATH,self.locator_delete_button)))
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                time.sleep(6)
+                time.sleep(3)
+
 
             except:
                 return
@@ -135,12 +135,12 @@ class Timesheet_page:
         self.description_display=str(self.driver.find_element_by_xpath(self.locator_sl_no).text)
         return self.description_display
 
-    # def get_hexcode_from_rgb(self,rgb):
-    #     m = re.search('rgb\((.+?)\)', rgb)
-    #     if m:
-    #         found = m.group(1)
-    #     r,g,b=found.split(',')
-    #     return rgb2hex(int(r),int(g),int(b))
+    def get_hexcode_from_rgb(self,rgb):
+        m = re.search('rgba\((.+?)\)', rgb)
+        if m:
+            found = m.group(1)
+        r,g,b=found.split(',')[:3]
+        return rgb2hex(int(r),int(g),int(b))
 
 
 
