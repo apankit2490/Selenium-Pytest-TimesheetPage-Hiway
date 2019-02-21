@@ -23,12 +23,3 @@ class Driver():
         self.driver.get(self.home_url)
         return self.driver
 
-    def get_csv_data(self,csv_path):
-        rows = []
-        csv_data = open(str(csv_path), "rb")
-        content = csv.reader(csv_data)
-        next(content, None)
-        for row in content:
-            rows.append(row)
-        return rows
-

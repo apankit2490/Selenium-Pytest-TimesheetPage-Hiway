@@ -135,12 +135,12 @@ class Timesheet_page:
         self.description_display=str(self.driver.find_element_by_xpath(self.locator_sl_no).text)
         return self.description_display
 
-    def get_hexcode_from_rgb(self,rgb):
-        m = re.search('rgb\((.+?)\)', rgb)
-        if m:
-            found = m.group(1)
-        r,g,b=found.split(',')
-        return rgb2hex(int(r),int(g),int(b))
+    # def get_hexcode_from_rgb(self,rgb):
+    #     m = re.search('rgb\((.+?)\)', rgb)
+    #     if m:
+    #         found = m.group(1)
+    #     r,g,b=found.split(',')
+    #     return rgb2hex(int(r),int(g),int(b))
 
 
 
