@@ -195,9 +195,7 @@ class Timesheet_page:
         name=self.driver.find_element_by_partial_link_text(self.locator_sharedwith_user_name).text
         return str(name)
 
-    def check_add_button_createtask_clickable(self):
-        element = WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, self.locator_hit_add)))
+    def get_add_button_createtask_clickable_status(self):
         return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
 
 

@@ -99,12 +99,12 @@ class Test_timesheet:
 
     def test_add_button_unclickable(self):
         self.timesheet.delete_task()
-        self.create_entry_projectcode('')
-        self.create_entry_type('')
-        self.create_entry_hours('')
-        self.create_entry_mins('')
-        self.create_entry_description('')
-
+        self.timesheet.create_entry_projectcode('')
+        self.timesheet.create_entry_type('')
+        self.timesheet.create_entry_hours('')
+        self.timesheet.create_entry_mins('')
+        self.timesheet.create_entry_description('')
+        assert False == self.timesheet.get_add_button_createtask_clickable_status()
 
 
 
