@@ -16,8 +16,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    # test_driver=Driver().get_driver()
-    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    test_driver=Driver().get_driver()
+    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -43,12 +43,17 @@ class Timesheet_page:
         self.locator_sharedwith_user_name=shared_with_username
         self.locator_sharedwith_save_button='#user-select-modal-save-button'
         self.locator_username_autocomplete='//li/md-autocomplete-parent-scope/div[@class="ng-binding"]'
+        self.locator_logout_button='span.username-position.hide-sm.hide-xs.ng-binding.ng-scope'
+        self.locator_logout_username='//*[@id="menu_container_1"]/md-menu-content/md-menu-item/a'
+        self.locator_google_my_avtaar='//*[@id="gbw"]/div/div/div[2]/div[4]/div[1]/a/span'
+        self.locator_google_signout='//*[@id="gb_71"]'
 
 
 
     def timesheet_page(self):
         time.sleep(5)
         timesheet = self.driver.find_element_by_xpath(self.locator_timesheet_button).click()
+        time.sleep(3)
 
     def get_name_in_header(self):
         element = WebDriverWait(self.driver, 10).until(
@@ -127,15 +132,17 @@ class Timesheet_page:
 
     def delete_task(self):
         while(True):
-            try:
-                element = WebDriverWait(self.driver, 5).until(
-                    EC.visibility_of_element_located((By.XPATH,self.locator_delete_button)))
+            # try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                time.sleep(3)
+                element = WebDriverWait(self.driver, 5).until(
+                    EC.visibility_of((By.XPATH, '/html/body/md-content/md-toast/div/span')))
+                element = WebDriverWait(self.driver, 5).until(
+            EC.invisibility_of_element((By.XPATH, '/html/body/md-content/md-toast/div/span')))
+                # time.sleep(3)
 
 
-            except:
-                return
+            # except:
+            #     return
 
     def get_slno_from_display(self):
         time.sleep(5)
@@ -197,6 +204,16 @@ class Timesheet_page:
 
     def get_add_button_createtask_clickable_status(self):
         return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
+
+    def logout(self):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
+                (By.CSS_SELECTOR,self.locator_logout_button)))
+        username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH,self.locator_logout_username)))
+        logout_button = self.driver.find_element_by_xpath(self.locator_logout_username).click()
+        self.driver.get(google_url)
+        self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
+        self.driver.find_element_by_xpath(self.locator_google_signout).click()
 
 
 
