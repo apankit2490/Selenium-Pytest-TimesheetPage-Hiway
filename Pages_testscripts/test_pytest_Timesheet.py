@@ -123,7 +123,10 @@ class Test_timesheet:
         suggested_username=self.timesheet.get_name_from_suggested_entry()
         assert test_userID_name in suggested_username
 
-
+    def test_freeze_message(self):
+        self.timesheet.datepicker_navigate_to_specified_date(specified_date)
+        msg=self.timesheet.get_freeze_message()
+        assert freeze_message in msg
 
 
 
