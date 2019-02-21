@@ -6,9 +6,13 @@ from pages.Hiway_page import Hiway_page
 from pages.Driver import Driver
 from pages.Login_page import Page_Login
 from pages.Timesheet_page import Timesheet_page
+from ddt import ddt,data,unpack
+import unittest
 
+path='data/test_data.csv'
 
-class Test_login_page():
+@ddt
+class Test_login_page(unittest.TestCase):
     @classmethod
     def setup_method(cls):
         cls.driver_object=Driver()
@@ -20,7 +24,9 @@ class Test_login_page():
         # self.login.logout()
         cls.driver.close()
 
-    def test_login_oauth(self):
+    @data(*get_csv_data(path))
+    @unpack
+    def test_login_oauth(self, username, password):
         self.login.initial_login()
         self.login.enter_username()
         self.login.enter_password()
