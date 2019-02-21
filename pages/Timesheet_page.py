@@ -2,6 +2,7 @@ import re
 import time
 
 from colormap import rgb2hex
+from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -34,6 +35,7 @@ class Timesheet_page:
         self.locator_delete_button='//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i'
         self.locator_description_from_display='//form//div//md-input-container/input[@ng-model="entry.description"]'
         self.locator_sl_no='//div/div/form/div[1]/div[1]/div[1]/div[1]'
+        self.locator_after_delete_msg='/html/body/md-content/div/div/div[5]/i'
 
 
 
@@ -119,7 +121,7 @@ class Timesheet_page:
     def delete_task(self):
         while(True):
             try:
-                element = WebDriverWait(self.driver, 10).until(
+                element = WebDriverWait(self.driver, 5).until(
                     EC.visibility_of_element_located((By.XPATH,self.locator_delete_button)))
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
                 time.sleep(3)
@@ -141,6 +143,15 @@ class Timesheet_page:
             found = m.group(1)
         r,g,b=found.split(',')[:3]
         return rgb2hex(int(r),int(g),int(b))
+
+    def get_delete_status(self):
+        try:
+            message=self.driver.find_element_by_xpath(self.locator_after_delete_msg)
+            return str(message.text)
+        except NoSuchElementException:
+            return None
+
+
 
 
 

@@ -9,3 +9,4 @@ six_hours='6'
 two_hours='2'
 eight_hours='8'
 description='testing from testcase'
+delete_message="No Time Entries. Use the form below to add one."

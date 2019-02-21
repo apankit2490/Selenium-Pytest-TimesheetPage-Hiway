@@ -77,6 +77,11 @@ class Test_timesheet:
         self.timesheet.create_entry_complete(desc=description)
         assert self.timesheet.get_slno_from_display() == '1.'
 
+    def test_delete(self):
+        self.timesheet.delete_task()
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
+
 
 
 
