@@ -4,6 +4,7 @@ import datetime
 
 import pytest
 
+from Utility.constants import *
 from pages import Timesheet_page
 from pages.Driver import Driver
 from pages.Hiway_page import Hiway_page
@@ -41,7 +42,7 @@ class Test_timesheet:
 
 
     def test_default_currentdate(self):
-        assert now.strftime("%a, %b %d") in self.timesheet.get_current_date()
+        assert now.strftime(assert_date_format) in self.timesheet.get_current_date()
 
 
     def test_next_button_disabled(self):
@@ -52,28 +53,28 @@ class Test_timesheet:
             self.timesheet.click_previous_button()
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
-            assert prev_date.strftime("%a, %b %d") in date
+            assert prev_date.strftime(assert_date_format) in date
     def test_colorchange_orange_blue_after8hrs(self):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours='6')
+        self.timesheet.create_entry_complete(hours=six_hours)
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
-        assert '#FF5722' == self.init_color
-        self.timesheet.create_entry_complete(hours='2')
+        assert orange_hexcode == self.init_color
+        self.timesheet.create_entry_complete(hours=two_hours)
         self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
-        assert '#3F51B5' == self.init_color
+        assert blue_hexcode == self.init_color
 
     def test_colorchange_blue_pink_after9hrs(self):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours='8')
+        self.timesheet.create_entry_complete(hours=eight_hours)
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
-        assert '#3F51B5' == self.init_color
-        self.timesheet.create_entry_complete(hours='2')
+        assert blue_hexcode == self.init_color
+        self.timesheet.create_entry_complete(hours=two_hours)
         self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
-        assert '#FF4081' == self.init_color
+        assert pink_hexcode == self.init_color
 
     def test_add_task(self):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(desc='testing from testcase')
+        self.timesheet.create_entry_complete(desc=description)
         assert self.timesheet.get_slno_from_display() == '1.'
 
 

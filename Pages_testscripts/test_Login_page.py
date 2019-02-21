@@ -1,5 +1,6 @@
 import time
 import pytest
+from Utility.constants import *
 from pages.Hiway_page import Hiway_page
 from pages.Driver import Driver
 from pages.Login_page import Page_Login
@@ -7,15 +8,12 @@ from pages.Timesheet_page import Timesheet_page
 from Utility.csv_loader import get_csv_data
 from ddt import ddt,data,unpack
 import unittest
-path = "/home/ankit_kumar/PycharmProjects/Selenium_automation/data/test_data.csv"
-invalid_cred_path="/home/ankit_kumar/PycharmProjects/Selenium_automation/data/test_data_invalid_cedentials.csv"
-
 
 @ddt
 class Test_login_page(unittest.TestCase):
 
     @classmethod
-    def setUp_method(cls):
+    def setUp(cls):
         cls.driver_object=Driver()
         cls.driver=cls.driver_object.get_driver()
         cls.login=Page_Login(cls.driver)
@@ -47,7 +45,7 @@ class Test_login_page(unittest.TestCase):
     @unpack
     def test_login_oauth_fail(self,username):
         error_message=self.login.invalid_login_uname(username)
-        assert 'Enter a valid email or phone number' in error_message
+        assert assert_message_invalid_login in error_message
 
 
 
