@@ -6,6 +6,7 @@ import pytest
 
 from Utility.constants import *
 from pages import Timesheet_page
+from pages.Dashboard import Dashboard_Page
 from pages.Driver import Driver
 from pages.Hiway_page import Hiway_page
 from pages.Timesheet_page import Timesheet_page
@@ -27,7 +28,8 @@ class Test_timesheet:
         cls.hiway = Hiway_page(cls.driver)
         cls.hiway.click_on_Continue()
         cls.timesheet=Timesheet_page(cls.driver)
-        cls.timesheet.timesheet_page()
+        cls.dashboard=Dashboard_Page(cls.driver)
+        cls.dashboard.navigate_to_dashboard_page()
 
 
     @classmethod
@@ -105,6 +107,15 @@ class Test_timesheet:
         self.timesheet.create_entry_mins('')
         self.timesheet.create_entry_description('')
         assert False == self.timesheet.get_add_button_createtask_clickable_status()
+
+    def test_task_entry_suggested(self):
+        self.timesheet.logout()
+        self.timesheet.login_as_testuser()
+        self.dashboard.navigate_to_dashboard_page()
+        self.timesheet.timesheet_page()
+
+
+
 
 
 

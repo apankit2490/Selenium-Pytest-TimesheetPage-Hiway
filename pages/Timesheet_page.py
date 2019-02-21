@@ -19,8 +19,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    test_driver=Driver().get_driver()
-    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    # test_driver=Driver().get_driver()
+    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -135,17 +135,17 @@ class Timesheet_page:
 
     def delete_task(self):
         while(True):
-            # try:
+            try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                element = WebDriverWait(self.driver, 5).until(
-                    EC.visibility_of((By.XPATH, '/html/body/md-content/md-toast/div/span')))
-                element = WebDriverWait(self.driver, 5).until(
-            EC.invisibility_of_element((By.XPATH, '/html/body/md-content/md-toast/div/span')))
-                # time.sleep(3)
+                # element = WebDriverWait(self.driver, 5).until(
+                #     EC.visibility_of((By.XPATH, '/html/body/md-content/md-toast/div/span')))
+            #     element = WebDriverWait(self.driver, 5).until(
+            # EC.invisibility_of_element((By.XPATH, '/html/body/md-content/md-toast/div/span')))
+                time.sleep(3)
 
 
-            # except:
-            #     return
+            except:
+                return
 
     def get_slno_from_display(self):
         time.sleep(5)
@@ -214,19 +214,23 @@ class Timesheet_page:
         # time.sleep(5)
         self.driver.get(Driver().home_url)
 
+    def signout_from_google(self):
+        self.driver.get(google_url)
+        self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
+        self.driver.find_element_by_xpath(self.locator_google_signout).click()
+
     def logout(self):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR,self.locator_logout_button)))
         username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.XPATH,self.locator_logout_username)))
         logout_button = self.driver.find_element_by_xpath(self.locator_logout_username).click()
-        self.driver.get(google_url)
-        self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
-        self.driver.find_element_by_xpath(self.locator_google_signout).click()
+        self.signout_from_google()
         self.clear_browser_cache_and_cookies()
 
-    def login_from_testuser(self):
+    def login_as_testuser(self):
         Page_Login(self.driver).login_complete(test_username,test_password)
+
 
 
 
