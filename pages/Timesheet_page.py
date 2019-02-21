@@ -7,6 +7,8 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+
+from Utility.constants import *
 from pages.Driver import Driver
 from pages.Login_page import Page_Login
 from pages.Hiway_page import Hiway_page
@@ -14,8 +16,8 @@ from pages.Hiway_page import Hiway_page
 
 
 class Timesheet_page:
-    # test_driver=Driver().get_driver()
-    def __init__(self,driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
+    test_driver=Driver().get_driver()
+    def __init__(self,driver=test_driver):#!!!!DONT FORGET TO REMOVE AFTER TESTTTTTTTTT
         self.driver=driver
         self.locator_timesheet_button='/html/body/div/md-toolbar/div/div[2]/span[4]/a'
         self.locator_name_in_header='/html/body/md-content/div/div/div[1]/h2'
@@ -36,6 +38,10 @@ class Timesheet_page:
         self.locator_description_from_display='//form//div//md-input-container/input[@ng-model="entry.description"]'
         self.locator_sl_no='//div/div/form/div[1]/div[1]/div[1]/div[1]'
         self.locator_after_delete_msg='/html/body/md-content/div/div/div[5]/i'
+        self.locator_sharedwith_select_users_hidden_popups= '//md-autocomplete-wrap/input[@placeholder="Select Users"]'
+        self.locator_shared_with_button='//div/div/form/div[1]/div[2]/span[2]/a/b'
+        self.locator_sharedwith_user_name=shared_with_username
+        self.locator_sharedwith_save_button='#user-select-modal-save-button'
 
 
 
@@ -157,6 +163,33 @@ class Timesheet_page:
         text = str(self.driver.find_element_by_css_selector(self.locator_datepicker).text)
         time = text[:5]
         return time
+
+    def click_shared_with(self):
+        self.driver.find_element_by_xpath(self.locator_shared_with_button).click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH,self.locator_sharedwith_select_users_hidden_popups)))
+
+    def enter_name_sharedwith(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
+        select_users=self.driver.find_element_by_xpath(self.locator_sharedwith_select_users_hidden_popups)
+        select_users.send_keys(shared_with_username)
+
+    def save_sharedwith_entry(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
+        save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).clear()
+
+    def get_name_from_sharedwith_entry(self):
+        name=self.driver.find_element_by_partial_link_text(self.locator_sharedwith_user_name).text
+        return str(name)
+
+
+
+
+
+
+
 
 
 
