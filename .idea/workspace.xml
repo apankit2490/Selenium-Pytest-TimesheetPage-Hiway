@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_Login_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_Login_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility/csv_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utility/csv_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test_data_invalid_cedentials.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_data_invalid_cedentials.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+            <state relative-caret-position="85">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -32,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state relative-caret-position="226">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -41,9 +37,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/test_data_invalid_cedentials.csv">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -79,11 +79,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Driver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="306">
               <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -104,19 +113,10 @@
         <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="142" column="14" lean-forward="true" selection-start-line="137" selection-start-column="6" selection-end-line="142" selection-end-column="14" />
+              <caret line="142" column="14" selection-start-line="137" selection-start-column="6" selection-end-line="142" selection-end-column="14" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/colormap/colors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -170,6 +170,7 @@
         <option value="$PROJECT_DIR$/data/test_data.csv" />
         <option value="$PROJECT_DIR$/pages/Timesheet_page.py" />
         <option value="$PROJECT_DIR$/Utility/csv_loader.py" />
+        <option value="$PROJECT_DIR$/data/test_data_invalid_cedentials.csv" />
         <option value="$PROJECT_DIR$/Pages_testscripts/test_Login_page.py" />
       </list>
     </option>
@@ -202,6 +203,11 @@
             <path>
               <item name="Selenium_automation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Selenium_automation" type="462c0819:PsiDirectoryNode" />
+              <item name="Drivers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Selenium_automation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Selenium_automation" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -224,14 +230,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/Pages_testscripts" />
+      <recent name="$PROJECT_DIR$/Drivers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/venv" />
       <recent name="$PROJECT_DIR$/Pages_testscripts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Pages_testscripts" />
-      <recent name="$PROJECT_DIR$/Drivers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,26 +253,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_Login_page.py">
-    <configuration name="Timesheet_page" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.pytest in test_pytest_Timesheet.py">
+    <configuration name="pytest for test_Login_page.Test_login_page.test_chumma" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pages" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pages/Timesheet_page.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_Login_page.Test_login_page.test_chumma&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -283,7 +284,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_Login_page.test_login_oauth" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth_fail" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -294,22 +295,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_Login_page.test_login_oauth&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_automation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs&quot;" />
+      <option name="_new_target" value="&quot;test_Login_page.Test_login_page.test_login_oauth_fail&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -328,13 +314,28 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_pytest_Timesheet.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_pytest_Timesheet.py" />
+        <item itemvalue="Python tests.pytest for test_Login_page.Test_login_page.test_chumma" />
         <item itemvalue="Python tests.pytest in test_Login_page.py" />
+        <item itemvalue="Python tests.pytest for test_Login_page.Test_login_page.test_login_oauth_fail" />
         <item itemvalue="Python tests.pytest for test_Login_page.Test_login_page.test_login_oauth" />
-        <item itemvalue="Python tests.pytest for test_Login_page.test_login_oauth" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" />
-        <item itemvalue="Python.Timesheet_page" />
       </list>
     </recent_temporary>
   </component>
@@ -352,42 +353,43 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_login_oauth - 2019.02.21 at 10h 41m 35s.xml">
-      <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 41m 47s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 42m 12s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_login_oauth - 2019.02.21 at 10h 47m 07s.xml">
-      <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 47m 41s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 48m 20s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 48m 23s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_login_oauth - 2019.02.21 at 10h 48m 27s.xml">
-      <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 49m 12s.xml">
-      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 50m 34s.xml">
       <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 55m 09s.xml">
+      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 55m 19s.xml">
+      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 56m 25s.xml">
+      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_login_oauth_fail - 2019.02.21 at 10h 57m 22s.xml">
+      <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth_fail" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_login_oauth_fail - 2019.02.21 at 10h 57m 35s.xml">
+      <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth_fail" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_login_oauth_fail - 2019.02.21 at 10h 57m 41s.xml">
+      <configuration name="pytest for test_Login_page.Test_login_page.test_login_oauth_fail" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Login_page_py - 2019.02.21 at 10h 58m 43s.xml">
+      <configuration name="pytest in test_Login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_Login_page_Test_login_page_test_chumma - 2019.02.21 at 11h 03m 21s.xml">
+      <configuration name="pytest for test_Login_page.Test_login_page.test_chumma" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.21 at 11h 07m 23s.xml">
+      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" weight="0.3306189" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007837" side_tool="true" weight="0.3306189" />
@@ -395,7 +397,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4992163" visible="true" weight="0.5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.4992163" visible="true" weight="0.5" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.40716612" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -466,13 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="242" column="38" selection-start-line="242" selection-start-column="38" selection-end-line="242" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -551,30 +546,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="25" column="40" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Driver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -587,7 +562,7 @@
     <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="142" column="14" lean-forward="true" selection-start-line="137" selection-start-column="6" selection-end-line="142" selection-end-column="14" />
+          <caret line="142" column="14" selection-start-line="137" selection-start-column="6" selection-end-line="142" selection-end-column="14" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -615,18 +590,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
+    <entry file="file://$PROJECT_DIR$/pages/Driver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/test_data_invalid_cedentials.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

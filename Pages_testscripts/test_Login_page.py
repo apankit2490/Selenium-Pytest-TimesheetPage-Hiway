@@ -8,6 +8,7 @@ from Utility.csv_loader import get_csv_data
 from ddt import ddt,data,unpack
 import unittest
 path = "/home/ankit_kumar/PycharmProjects/Selenium_automation/data/test_data.csv"
+invalid_cred_path="/home/ankit_kumar/PycharmProjects/Selenium_automation/data/test_data_invalid_cedentials.csv"
 
 
 @ddt
@@ -25,6 +26,12 @@ class Test_login_page(unittest.TestCase):
     @classmethod
     def teardown_class(cls):
         pass
+
+    @classmethod
+    def tearDown(cls):
+        # self.login.logout()
+        cls.driver.close()
+
     @data(*get_csv_data(path))
     @unpack
     def test_login_oauth(self, username, password):
@@ -36,14 +43,12 @@ class Test_login_page(unittest.TestCase):
         usernameee =str(self.login.getname())
         assert self.usernamee.lower() in usernameee.lower()
 
-    def test_login_oauth_fail(self):
-        error_message=self.login.invalid_login_uname(self.driver_object.invalid_email)
+    @data(*get_csv_data(invalid_cred_path))
+    @unpack
+    def test_login_oauth_fail(self,username):
+        error_message=self.login.invalid_login_uname(username)
         assert 'Enter a valid email or phone number' in error_message
 
-    @classmethod
-    def tearDown(cls):
-        # self.login.logout()
-        cls.driver.close()
 
 
 if __name__=='__main__':
