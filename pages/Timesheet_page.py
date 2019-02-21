@@ -2,6 +2,9 @@ import re
 import time
 
 from colormap import rgb2hex
+from selenium.webdriver.common.keys import Keys
+
+from pages.Login_page import Page_Login
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -204,6 +207,12 @@ class Timesheet_page:
 
     def get_add_button_createtask_clickable_status(self):
         return self.driver.find_element_by_xpath(self.locator_hit_add).is_enabled()
+    def clear_browser_cache_and_cookies(self):
+        self.driver.get('chrome://settings/clearBrowserData')
+        self.driver.switch_to_active_element()
+        self.driver.find_element_by_tag_name('settings-ui').send_keys(Keys.ENTER)
+        # time.sleep(5)
+        self.driver.get(Driver().home_url)
 
     def logout(self):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
@@ -214,6 +223,13 @@ class Timesheet_page:
         self.driver.get(google_url)
         self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
         self.driver.find_element_by_xpath(self.locator_google_signout).click()
+        self.clear_browser_cache_and_cookies()
+
+    def login_from_testuser(self):
+        Page_Login(self.driver).login_complete(test_username,test_password)
+
+
+
 
 
 
