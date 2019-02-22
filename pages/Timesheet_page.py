@@ -38,6 +38,7 @@ class Timesheet_page:
         self.locator_mins='newEntry.min'
         self.locator_mins_edit = 'entry.min'
         self.locator_description='newEntry.description'
+        self.locator_description_edit = '//input[@ng-model="entry.description"]'
         self.locator_hit_add= '/html/body/md-content/div/div/md-card/md-card-text/form/div[1]/button'
         self.locator_color_header='.md-bar.md-bar2'
         self.locator_delete_button='//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i'
@@ -108,6 +109,8 @@ class Timesheet_page:
             EC.presence_of_element_located((By.XPATH, self.locator_type_dropdown_edit)))
         select = self.driver.find_element_by_xpath(self.locator_type_dropdown_edit)
         select.send_keys(type)
+        select.send_keys(Keys.TAB)
+        self.wait_till_toast_dissapear()
 
     def create_entry_hours(self,hours='05'):
         element = WebDriverWait(self.driver, 10).until(
@@ -117,7 +120,9 @@ class Timesheet_page:
     def edit_entry_hours(self,hours='05'):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.NAME, self.locator_hours_edit)))
-        self.hour=self.driver.find_element_by_name(self.locator_hours_edit).send_keys(hours)
+        self.hour=self.driver.find_element_by_name(self.locator_hours_edit)
+        self.hour.clear()
+        self.hour.send_keys(hours)
         self.wait_till_toast_dissapear()
 
 
@@ -129,7 +134,11 @@ class Timesheet_page:
     def edit_entry_mins(self,mins='30'):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.NAME, self.locator_mins_edit)))
-        self.mins=self.driver.find_element_by_name(self.locator_mins_edit).send_keys(mins)
+        self.mins=self.driver.find_element_by_name(self.locator_mins_edit)
+        self.mins.clear()
+        self.mins.send_keys(mins)
+        self.wait_till_toast_dissapear()
+
 
 
 
@@ -137,6 +146,14 @@ class Timesheet_page:
         # element = WebDriverWait(self.driver, 10).until(
         #     EC.visibility_of_element_located((By.XPATH, self.locator_description)))
         self.description=self.driver.find_element_by_name(self.locator_description).send_keys(description)
+
+    def edit_entry_description(self,description='default description'):
+        # element = WebDriverWait(self.driver, 10).until(
+        #     EC.visibility_of_element_located((By.XPATH, self.locator_description)))
+        self.description=self.driver.find_element_by_xpath(self.locator_description_edit)
+        self.description.clear()
+        self.description.send_keys(description)
+        self.description.send_keys(Keys.TAB)
 
     def create_entry_hit_add(self):
         element = WebDriverWait(self.driver, 10).until(

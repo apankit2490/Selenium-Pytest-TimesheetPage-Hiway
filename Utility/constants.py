@@ -21,3 +21,7 @@ freeze_message='Timesheet older than 2 or more days cannot be updated. Contact y
 ten_hours='10'
 total_hrs_msg='Total Hours cannot exceed 24.'
 fifteen_hours='15'
+edit_type="Finance"
+edit_hours='9'
+edit_mins='7'
+edit_description='updated description'

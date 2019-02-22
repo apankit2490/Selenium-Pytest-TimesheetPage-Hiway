@@ -147,7 +147,16 @@ class Test_timesheet:
         message=self.timesheet.get_delete_status()
         assert  delete_message in  message
 
-    def test_
+    def test_edit_timesheet_entry(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.timesheet.edit_entry_type(type=edit_type)
+        self.timesheet.edit_entry_hours(hours=edit_hours)
+        self.timesheet.edit_entry_mins(mins=edit_mins)
+        self.timesheet.edit_entry_description(description=edit_description)
+        message=self.timesheet.get_message_from_toast()
+        assert 'update' in message
+
 
 
 
