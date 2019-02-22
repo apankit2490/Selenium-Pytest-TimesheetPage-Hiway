@@ -25,3 +25,4 @@ edit_type="Finance"
 edit_hours='9'
 edit_mins='7'
 edit_description='updated description'
+hiway_user_name='hiwaytest'

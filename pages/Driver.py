@@ -18,7 +18,7 @@ class Driver():
         self.invalid_password = data['invalid_password']
 
     def get_driver(self):
-        self.driver = webdriver.Chrome(self.chrome_path)
+        self.driver = webdriver.Chrome(executable_path=self.chrome_path)
         self.driver.maximize_window()
         self.driver.get(self.home_url)
         return self.driver

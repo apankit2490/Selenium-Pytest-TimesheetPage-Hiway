@@ -60,6 +60,8 @@ class Timesheet_page:
         self.locator_chrome_cleardata='chrome://settings/clearBrowserData'
         self.locator_hit_enter_in_cleardata_screen='settings-ui'
         self.locator_suggested_username='hiwaytest'
+        self.locator_suggested_entry_accept='//md-icon[@title="Accept"]/i[@class="material-icons"]'
+        self.locator_suggested_entry_reject='//md-icon[@title="Reject"]/i[@class="material-icons"]'
 
 
 
@@ -321,3 +323,8 @@ class Timesheet_page:
         name=self.driver.find_element_by_partial_link_text(self.locator_suggested_username).text
         return str(name)
 
+    def set_suggested_entry_accept(self):
+        accept=self.driver.find_element_by_xpath(self.locator_suggested_entry_accept)
+        accept.click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
