@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e5ecc37-0a50-4838-a840-1fa5d52b31ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Timesheet_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Timesheet_page.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +17,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="153" column="36" lean-forward="true" selection-start-line="153" selection-start-column="36" selection-end-line="153" selection-end-column="36" />
+            <state relative-caret-position="204">
+              <caret line="208" lean-forward="true" selection-start-line="66" selection-start-column="3" selection-end-line="75" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/ddt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="144" selection-start-line="144" selection-end-line="144" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="30" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -27,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utility/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" selection-start-line="11" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="-153">
+              <caret line="3" column="65" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -46,64 +69,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sample.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Driver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="32" column="38" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="43" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/Hiway_page.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="336" column="29" lean-forward="true" selection-start-line="336" selection-start-column="29" selection-end-line="336" selection-end-column="29" />
+            <state relative-caret-position="106">
+              <caret line="174" column="107" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="107" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -112,11 +81,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webelement.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <entry file="file://$PROJECT_DIR$/data/test_data_fields_entry.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
             </state>
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/test_data_fields_entry_blue.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state>
+              <caret selection-end-column="25" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/test_data_invalid_cedentials.csv">
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/test_data.csv">
+          <provider selected="true" editor-type-id="csv-text-editor" />
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
           </provider>
         </entry>
       </file>
@@ -144,13 +144,18 @@
       <find>hit</find>
       <find>enab</find>
       <find>logo</find>
-      <find>tear</find>
       <find>prev</find>
       <find>projec</find>
       <find>By.CSS_SELECTOR, self.locator_toast_div</find>
       <find>dele</find>
       <find>delete</find>
       <find>edit</find>
+      <find>complete</find>
+      <find>shared</find>
+      <find>tea</find>
+      <find>screensho</find>
+      <find>EDIT</find>
+      <find>tear</find>
     </findStrings>
     <replaceStrings>
       <replace>driver.self</replace>
@@ -182,9 +187,11 @@
         <option value="$PROJECT_DIR$/pages/Login_page.py" />
         <option value="$PROJECT_DIR$/Sample.py" />
         <option value="$PROJECT_DIR$/pages/Dashboard.py" />
-        <option value="$PROJECT_DIR$/pages/Driver.py" />
         <option value="$PROJECT_DIR$/Utility/constants.py" />
+        <option value="$PROJECT_DIR$/pages/Driver.py" />
         <option value="$PROJECT_DIR$/pages/Timesheet_page.py" />
+        <option value="$PROJECT_DIR$/data/test_data_fields_entry.csv" />
+        <option value="$PROJECT_DIR$/data/test_data_fields_entry_blue.csv" />
         <option value="$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py" />
       </list>
     </option>
@@ -231,7 +238,7 @@
             <path>
               <item name="Selenium_automation" type="b2602c69:ProjectViewProjectNode" />
               <item name="Selenium_automation" type="462c0819:PsiDirectoryNode" />
-              <item name="Utility" type="462c0819:PsiDirectoryNode" />
+              <item name="ScreenShots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,15 +252,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/Pages_testscripts" />
-      <recent name="$PROJECT_DIR$/Drivers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/venv" />
       <recent name="$PROJECT_DIR$/Pages_testscripts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/Pages_testscripts" />
+      <recent name="$PROJECT_DIR$/Drivers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -268,29 +275,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_rejected">
-    <configuration name="Sample" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Selenium_automation" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sample.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_edit_timesheet_entry" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest in test_pytest_Timesheet.py">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -301,11 +287,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_edit_timesheet_entry&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_add_task&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -316,11 +302,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -331,11 +317,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_default_currentdate&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_rejected" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Selenium_automation" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -346,17 +332,32 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_rejected&quot;" />
+      <option name="_new_target" value="&quot;test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_pytest_Timesheet.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_automation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pages_testscripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_rejected" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted" />
-        <item itemvalue="Python.Sample" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_edit_timesheet_entry" />
-        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" />
+        <item itemvalue="Python tests.pytest in test_pytest_Timesheet.py" />
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" />
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" />
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_default_currentdate" />
+        <item itemvalue="Python tests.pytest for test_pytest_Timesheet.Test_timesheet.test_add_task" />
       </list>
     </recent_temporary>
   </component>
@@ -374,35 +375,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 11h 43m 02s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_name_on_timesheet - 2019.02.22 at 15h 37m 45s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested - 2019.02.22 at 11h 43m 47s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_name_on_timesheet - 2019.02.22 at 15h 39m 55s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested_is_accepted - 2019.02.22 at 11h 45m 33s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_name_on_timesheet - 2019.02.22 at 15h 41m 53s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_edit_timesheet_entry - 2019.02.22 at 11h 46m 26s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_edit_timesheet_entry" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_name_on_timesheet - 2019.02.22 at 15h 43m 09s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_edit_timesheet_entry - 2019.02.22 at 11h 54m 20s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_edit_timesheet_entry" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_name_on_timesheet - 2019.02.22 at 15h 45m 06s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_name_on_timesheet" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_edit_timesheet_entry - 2019.02.22 at 11h 55m 04s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_edit_timesheet_entry" configurationId="tests" />
+    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_colorchange_orange_blue_after8hrs - 2019.02.22 at 16h 39m 28s.xml">
+      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_colorchange_orange_blue_after8hrs" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested_is_accepted - 2019.02.22 at 12h 03m 22s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted" configurationId="tests" />
+    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.22 at 16h 40m 50s.xml">
+      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested_is_accepted - 2019.02.22 at 12h 07m 25s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted" configurationId="tests" />
+    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.22 at 16h 44m 03s.xml">
+      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested_is_accepted - 2019.02.22 at 12h 17m 34s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_accepted" configurationId="tests" />
+    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.22 at 16h 44m 52s.xml">
+      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_pytest_Timesheet_Test_timesheet_test_task_entry_suggested_is_rejected - 2019.02.22 at 12h 28m 20s.xml">
-      <configuration name="pytest for test_pytest_Timesheet.Test_timesheet.test_task_entry_suggested_is_rejected" configurationId="tests" />
+    <history-entry file="pytest_in_test_pytest_Timesheet_py - 2019.02.22 at 16h 45m 52s.xml">
+      <configuration name="pytest in test_pytest_Timesheet.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -410,7 +411,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20219436" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18652038" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.4992163" weight="0.24104235" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5007837" side_tool="true" weight="0.3306189" />
@@ -517,36 +518,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/.~lock.test_data.csv#" />
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/ddt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/test_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/test_data_invalid_cedentials.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utility/csv_loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/support/wait.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -569,23 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="241" selection-start-line="241" selection-end-line="241" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="635" selection-start-line="635" selection-end-line="635" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -613,37 +573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="32" column="38" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Driver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -657,29 +590,145 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="1054" selection-start-line="1054" selection-end-line="1054" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/ScreenShots1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScreenShots/HELO.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/-1536232852/sys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="164" column="4" selection-start-line="164" selection-start-column="4" selection-end-line="164" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Driver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/unittest/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScreenShots/hello.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utility/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="3" column="65" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_Login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="30" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test_data.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/Timesheet_page.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="336" column="29" lean-forward="true" selection-start-line="336" selection-start-column="29" selection-end-line="336" selection-end-column="29" />
+        <state relative-caret-position="106">
+          <caret line="174" column="107" selection-start-line="174" selection-start-column="35" selection-end-line="174" selection-end-column="107" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utility/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-end-line="11" selection-end-column="14" />
+    <entry file="file://$PROJECT_DIR$/data/test_data_invalid_cedentials.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
         </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/ddt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test_data_fields_entry.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test_data_fields_entry_blue.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages_testscripts/test_pytest_Timesheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="153" column="36" lean-forward="true" selection-start-line="153" selection-start-column="36" selection-end-line="153" selection-end-column="36" />
+        <state relative-caret-position="204">
+          <caret line="208" lean-forward="true" selection-start-line="66" selection-start-column="3" selection-end-line="75" selection-end-column="20" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,3 +1,4 @@
+import sys,os
 import time
 from datetime import timedelta
 import datetime
@@ -5,22 +6,24 @@ import datetime
 import pytest
 
 from Utility.constants import *
+from Utility.csv_loader import get_csv_data
 from pages import Timesheet_page
 from pages.Dashboard import Dashboard_Page
 from pages.Driver import Driver
 from pages.Hiway_page import Hiway_page
 from pages.Timesheet_page import Timesheet_page
+from ddt import ddt,data,unpack
 
 now = datetime.datetime.now()
 import unittest
 from pages.Login_page import *
 from pytest import *
 
-
-class Test_timesheet:
+@ddt
+class Test_timesheet(unittest.TestCase):
 
     @classmethod
-    def setup_method(cls):
+    def setUp(cls):
         cls.driver_object = Driver()
         cls.driver = cls.driver_object.get_driver()
         cls.login = Page_Login(cls.driver)
@@ -33,8 +36,13 @@ class Test_timesheet:
 
 
     @classmethod
-    def teardown_method(self):
+    def tearDown(self):
+        print("hgc"+str(sys.exc_info()))
         # self.login.logout(self.driver)
+        if (sys.exc_info()[0]==None):
+            # logging.info("# Taking screenshot.")
+            test_method_name ='hello'
+            self.driver.save_screenshot("/home/ankit_kumar/PycharmProjects/Selenium_automation/ScreenShots/%s.png"% test_method_name)
         self.driver.close()
 
     def test_name_on_timesheet(self):
@@ -56,28 +64,33 @@ class Test_timesheet:
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
             assert prev_date.strftime(assert_date_format) in date
-
-    def test_colorchange_orange_blue_after8hrs(self):
+    @data(*get_csv_data(test_csv_orange))
+    @unpack
+    def test_colorchange_orange_blue_after8hrs(self,text,type,hour,min,desc):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=six_hours)
+        self.timesheet.create_entry_complete(text,type,hour,min,desc)
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert orange_hexcode == self.init_color
         self.timesheet.create_entry_complete(hours=two_hours)
         self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert blue_hexcode == self.init_color
 
-    def test_colorchange_blue_pink_after9hrs(self):
+    @data(*get_csv_data(test_csv_blue))
+    @unpack
+    def test_colorchange_blue_pink_after9hrs(self,text,type,hours,mins,desc):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=eight_hours)
+        self.timesheet.create_entry_complete(text,type,hours,mins,desc)
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert blue_hexcode == self.init_color
         self.timesheet.create_entry_complete(hours=two_hours)
         self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert pink_hexcode == self.init_color
 
-    def test_add_task(self):
+    @data(*get_csv_data(test_csv_blue))
+    @unpack
+    def test_add_task(self,text,type,hours,mins,desc):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(desc=description)
+        self.timesheet.create_entry_complete(text,type,hours,mins,desc)
         assert self.timesheet.get_slno_from_display() == '1.'
 
     def test_delete(self):
@@ -108,6 +121,41 @@ class Test_timesheet:
         self.timesheet.create_entry_mins('')
         self.timesheet.create_entry_description('')
         assert False == self.timesheet.get_add_button_createtask_clickable_status()
+
+
+    def test_freeze_message(self):
+        self.timesheet.datepicker_navigate_to_specified_date(specified_date)
+        msg=self.timesheet.get_freeze_message()
+        assert freeze_message in msg
+
+    def test_empty_timesheet_message(self):
+        self.timesheet.delete_task()
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
+
+    def test_total_working_hrs_restriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        message=self.timesheet.get_message_from_toast()
+        assert total_hrs_msg in message
+
+    def test_single_entry_restrriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=fifteen_hours)
+        message=self.timesheet.get_delete_status()
+        assert  delete_message in  message
+
+    def test_edit_timesheet_entry(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.timesheet.edit_entry_type(type=edit_type)
+        self.timesheet.edit_entry_hours(hours=edit_hours)
+        self.timesheet.edit_entry_mins(mins=edit_mins)
+        self.timesheet.edit_entry_description(description=edit_description)
+        message=self.timesheet.get_message_from_toast()
+        assert 'update' in message
 
     def test_task_entry_suggested(self):
         self.timesheet.logout()
@@ -152,42 +200,6 @@ class Test_timesheet:
         self.timesheet.set_suggested_entry_reject()
         msg=self.timesheet.get_delete_status()
         assert delete_message in msg
-
-
-
-    def test_freeze_message(self):
-        self.timesheet.datepicker_navigate_to_specified_date(specified_date)
-        msg=self.timesheet.get_freeze_message()
-        assert freeze_message in msg
-
-    def test_empty_timesheet_message(self):
-        self.timesheet.delete_task()
-        message=self.timesheet.get_delete_status()
-        assert message == delete_message
-
-    def test_total_working_hrs_restriction(self):
-        self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=ten_hours)
-        self.timesheet.create_entry_complete(hours=ten_hours)
-        self.timesheet.create_entry_complete(hours=ten_hours)
-        message=self.timesheet.get_message_from_toast()
-        assert total_hrs_msg in message
-
-    def test_single_entry_restrriction(self):
-        self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=fifteen_hours)
-        message=self.timesheet.get_delete_status()
-        assert  delete_message in  message
-
-    def test_edit_timesheet_entry(self):
-        self.timesheet.delete_task()
-        self.timesheet.create_entry_complete()
-        self.timesheet.edit_entry_type(type=edit_type)
-        self.timesheet.edit_entry_hours(hours=edit_hours)
-        self.timesheet.edit_entry_mins(mins=edit_mins)
-        self.timesheet.edit_entry_description(description=edit_description)
-        message=self.timesheet.get_message_from_toast()
-        assert 'update' in message
 
 
 
