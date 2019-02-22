@@ -45,7 +45,7 @@ class Test_timesheet(unittest.TestCase):
             self.driver.save_screenshot("/home/ankit_kumar/PycharmProjects/Selenium_automation/ScreenShots/%s.png"% test_method_name)
         self.driver.close()
 
-    '''def test_name_on_timesheet(self):
+    def test_name_on_timesheet(self):
         header_displayed=self.timesheet.get_name_in_header()
         name_from_email=self.timesheet.get_name_from_email()
         assert name_from_email.lower() in str(header_displayed.text).lower()
@@ -63,7 +63,7 @@ class Test_timesheet(unittest.TestCase):
             self.timesheet.click_previous_button()
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
-            assert prev_date.strftime(assert_date_format) in date'''
+            assert prev_date.strftime(assert_date_format) in date
     @data(*get_csv_data(test_csv_orange))
     @unpack
     def test_colorchange_orange_blue_after8hrs(self,text,type,hour,min,desc):
@@ -93,7 +93,7 @@ class Test_timesheet(unittest.TestCase):
         self.timesheet.create_entry_complete(text,type,hours,mins,desc)
         assert self.timesheet.get_slno_from_display() == '1.'
 
-    '''def test_delete(self):
+    def test_delete(self):
         self.timesheet.delete_task()
         message=self.timesheet.get_delete_status()
         assert message == delete_message
@@ -199,7 +199,7 @@ class Test_timesheet(unittest.TestCase):
         self.dashboard.navigate_to_timesheet_page()
         self.timesheet.set_suggested_entry_reject()
         msg=self.timesheet.get_delete_status()
-        assert delete_message in msg'''
+        assert delete_message in msg
 
 
 
