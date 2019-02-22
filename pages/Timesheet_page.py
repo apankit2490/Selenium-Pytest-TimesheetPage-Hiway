@@ -328,3 +328,10 @@ class Timesheet_page:
         accept.click()
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
+
+    def set_suggested_entry_reject(self):
+        accept=self.driver.find_element_by_xpath(self.locator_suggested_entry_reject)
+        accept.click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.invisibility_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
+        self.driver.refresh()
