@@ -138,6 +138,22 @@ class Test_timesheet:
         name=self.timesheet.get_name_from_suggested_entry()
         assert hiway_user_name in name
 
+    def test_task_entry_suggested_is_rejected(self):
+        self.timesheet.logout()
+        self.timesheet.login_as_testuser()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.delete_task()
+        self.timesheet.save_sharedwith_complete(my_name)
+        self.timesheet.logout()
+        self.login.login_complete()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.set_suggested_entry_reject()
+        msg=self.timesheet.get_delete_status()
+        assert delete_message in msg
+
+
 
     def test_freeze_message(self):
         self.timesheet.datepicker_navigate_to_specified_date(specified_date)
