@@ -31,9 +31,12 @@ class Timesheet_page:
         self.locator_project_code_dropdown='//ul/li[1]/md-autocomplete-parent-scope/span[1]/span'
         self.locator_datepicker='body > md-content > div > div > div.md-title.layout-align-space-between-center.layout-row > span'
         self.locator_type_dropdown='//md-select[@ng-model="newEntry.type"]'
+        self.locator_type_dropdown_edit='//md-select[@ng-model="entry.type"]'
         self.locator_type_choice='//div[@class="md-select-menu-container md-active md-clickable"]/md-select-menu/md-content/md-option[1]/div'
         self.locator_hours='newEntry.hrs'
+        self.locator_hours_edit = 'entry.hrs'
         self.locator_mins='newEntry.min'
+        self.locator_mins_edit = 'entry.min'
         self.locator_description='newEntry.description'
         self.locator_hit_add= '/html/body/md-content/div/div/md-card/md-card-text/form/div[1]/button'
         self.locator_color_header='.md-bar.md-bar2'
@@ -93,10 +96,17 @@ class Timesheet_page:
         project_code.clear()
         project_code.send_keys(text)
 
+
     def create_entry_type(self,type="Debug"):
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH,self.locator_type_dropdown)))
         select=self.driver.find_element_by_xpath(self.locator_type_dropdown)
+        select.send_keys(type)
+
+    def edit_entry_type(self, type="Debug"):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.locator_type_dropdown_edit)))
+        select = self.driver.find_element_by_xpath(self.locator_type_dropdown_edit)
         select.send_keys(type)
 
     def create_entry_hours(self,hours='05'):
@@ -104,10 +114,24 @@ class Timesheet_page:
             EC.visibility_of_element_located((By.NAME, self.locator_hours)))
         self.hour=self.driver.find_element_by_name(self.locator_hours).send_keys(hours)
 
+    def edit_entry_hours(self,hours='05'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.NAME, self.locator_hours_edit)))
+        self.hour=self.driver.find_element_by_name(self.locator_hours_edit).send_keys(hours)
+        self.wait_till_toast_dissapear()
+
+
     def create_entry_mins(self,mins='30'):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.NAME, self.locator_mins)))
         self.mins=self.driver.find_element_by_name(self.locator_mins).send_keys(mins)
+
+    def edit_entry_mins(self,mins='30'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.NAME, self.locator_mins_edit)))
+        self.mins=self.driver.find_element_by_name(self.locator_mins_edit).send_keys(mins)
+
+
 
     def create_entry_description(self,description='default description'):
         # element = WebDriverWait(self.driver, 10).until(
@@ -141,10 +165,7 @@ class Timesheet_page:
         while(True):
             try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                element = WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
-                element = WebDriverWait(self.driver, 10).until_not(
-                    EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
+                self.wait_till_toast_dissapear()
 
 
             except:
@@ -197,15 +218,19 @@ class Timesheet_page:
             select_users.send_keys(i)
         user=self.driver.find_element_by_xpath(self.locator_username_autocomplete).click()
 
+    def wait_till_toast_dissapear(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
+        element = WebDriverWait(self.driver, 10).until_not(
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
+
     def save_sharedwith_entry(self):
         # time.sleep(5)
         element = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).click()
-        element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
-        element = WebDriverWait(self.driver, 10).until_not(
-            EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
+        self.wait_till_toast_dissapear()
+
 
     def save_sharedwith_complete(self,name=shared_with_username):
         self.create_entry_complete()
@@ -233,11 +258,6 @@ class Timesheet_page:
         self.driver.find_element_by_xpath(self.locator_google_signout).click()
 
     def logout(self):
-        # try:
-        #     if(self.driver.find_element_by_xpath('/html/body/md-content/md-toast/div/button/span').is_enabled()):
-        #         element = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH,'/html/body/md-content/md-toast/div/button/span')))
-        # except:
-        #     pass
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR,self.locator_logout_button)))
         username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
