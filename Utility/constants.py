@@ -10,6 +10,7 @@ two_hours='2'
 eight_hours='8'
 description='testing from testcase'
 delete_message="No Time Entries. Use the form below to add one."
+delete_toast_message='Time Sheet Deleted'
 shared_with_username='ashish'
 test_username='hiwaytest@hashedin.com'
 test_password='Hiway@123'

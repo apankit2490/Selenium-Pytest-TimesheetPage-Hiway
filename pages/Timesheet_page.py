@@ -335,3 +335,4 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until(
             EC.invisibility_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
         self.driver.refresh()
+

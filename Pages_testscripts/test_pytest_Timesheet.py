@@ -109,6 +109,41 @@ class Test_timesheet:
         self.timesheet.create_entry_description('')
         assert False == self.timesheet.get_add_button_createtask_clickable_status()
 
+
+    def test_freeze_message(self):
+        self.timesheet.datepicker_navigate_to_specified_date(specified_date)
+        msg=self.timesheet.get_freeze_message()
+        assert freeze_message in msg
+
+    def test_empty_timesheet_message(self):
+        self.timesheet.delete_task()
+        message=self.timesheet.get_delete_status()
+        assert message == delete_message
+
+    def test_total_working_hrs_restriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        self.timesheet.create_entry_complete(hours=ten_hours)
+        message=self.timesheet.get_message_from_toast()
+        assert total_hrs_msg in message
+
+    def test_single_entry_restrriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=fifteen_hours)
+        message=self.timesheet.get_delete_status()
+        assert  delete_message in  message
+
+    def test_edit_timesheet_entry(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.timesheet.edit_entry_type(type=edit_type)
+        self.timesheet.edit_entry_hours(hours=edit_hours)
+        self.timesheet.edit_entry_mins(mins=edit_mins)
+        self.timesheet.edit_entry_description(description=edit_description)
+        message=self.timesheet.get_message_from_toast()
+        assert 'update' in message
+
     def test_task_entry_suggested(self):
         self.timesheet.logout()
         self.timesheet.login_as_testuser()
@@ -152,42 +187,6 @@ class Test_timesheet:
         self.timesheet.set_suggested_entry_reject()
         msg=self.timesheet.get_delete_status()
         assert delete_message in msg
-
-
-
-    def test_freeze_message(self):
-        self.timesheet.datepicker_navigate_to_specified_date(specified_date)
-        msg=self.timesheet.get_freeze_message()
-        assert freeze_message in msg
-
-    def test_empty_timesheet_message(self):
-        self.timesheet.delete_task()
-        message=self.timesheet.get_delete_status()
-        assert message == delete_message
-
-    def test_total_working_hrs_restriction(self):
-        self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=ten_hours)
-        self.timesheet.create_entry_complete(hours=ten_hours)
-        self.timesheet.create_entry_complete(hours=ten_hours)
-        message=self.timesheet.get_message_from_toast()
-        assert total_hrs_msg in message
-
-    def test_single_entry_restrriction(self):
-        self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=fifteen_hours)
-        message=self.timesheet.get_delete_status()
-        assert  delete_message in  message
-
-    def test_edit_timesheet_entry(self):
-        self.timesheet.delete_task()
-        self.timesheet.create_entry_complete()
-        self.timesheet.edit_entry_type(type=edit_type)
-        self.timesheet.edit_entry_hours(hours=edit_hours)
-        self.timesheet.edit_entry_mins(mins=edit_mins)
-        self.timesheet.edit_entry_description(description=edit_description)
-        message=self.timesheet.get_message_from_toast()
-        assert 'update' in message
 
 
 
