@@ -20,3 +20,4 @@ specified_date="Mon, Feb 18"
 freeze_message='Timesheet older than 2 or more days cannot be updated. Contact your reporting manager for assistance.'
 ten_hours='10'
 total_hrs_msg='Total Hours cannot exceed 24.'
+fifteen_hours='15'

@@ -141,6 +141,14 @@ class Test_timesheet:
         message=self.timesheet.get_message_from_toast()
         assert total_hrs_msg in message
 
+    def test_single_entry_restrriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=fifteen_hours)
+        message=self.timesheet.get_delete_status()
+        assert  delete_message in  message
+
+
+
 
 
 

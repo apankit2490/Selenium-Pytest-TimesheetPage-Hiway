@@ -1,7 +1,6 @@
 import datetime
 import re
 import time
-
 from colormap import rgb2hex
 from selenium.webdriver.common.keys import Keys
 now = datetime.datetime.now()
@@ -271,5 +270,10 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until_not(
             EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
         return str(msg)
+
+    def get_message_from_hidden_input_invalid_hours(self):
+        time.sleep(10)
+        message=self.driver.execute_script('return $("//md-card-text/form/div/md-input-container[@flex-xs="50"]").text();')
+        return str(message)
 
 
