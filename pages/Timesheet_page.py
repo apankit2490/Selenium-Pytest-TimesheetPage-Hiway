@@ -159,6 +159,13 @@ class Timesheet_page:
         self.description.send_keys(description)
         self.description.send_keys(Keys.TAB)
 
+    def get_description_text(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.locator_delete_button)))
+        time.sleep(10)
+        desc=self.driver.find_element_by_xpath(self.locator_description_edit).text
+        return str(desc)
+
     def create_entry_hit_add(self):
         element = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.locator_hit_add)))
@@ -335,4 +342,5 @@ class Timesheet_page:
         element = WebDriverWait(self.driver, 10).until(
             EC.invisibility_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
         self.driver.refresh()
+
 

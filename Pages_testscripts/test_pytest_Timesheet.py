@@ -1,3 +1,4 @@
+import sys,os
 import time
 from datetime import timedelta
 import datetime
@@ -5,22 +6,24 @@ import datetime
 import pytest
 
 from Utility.constants import *
+from Utility.csv_loader import get_csv_data
 from pages import Timesheet_page
 from pages.Dashboard import Dashboard_Page
 from pages.Driver import Driver
 from pages.Hiway_page import Hiway_page
 from pages.Timesheet_page import Timesheet_page
+from ddt import ddt,data,unpack
 
 now = datetime.datetime.now()
 import unittest
 from pages.Login_page import *
 from pytest import *
 
-
-class Test_timesheet:
+@ddt
+class Test_timesheet(unittest.TestCase):
 
     @classmethod
-    def setup_method(cls):
+    def setUp(cls):
         cls.driver_object = Driver()
         cls.driver = cls.driver_object.get_driver()
         cls.login = Page_Login(cls.driver)
@@ -33,11 +36,16 @@ class Test_timesheet:
 
 
     @classmethod
-    def teardown_method(self):
+    def tearDown(self):
+        print("hgc"+str(sys.exc_info()))
         # self.login.logout(self.driver)
+        if (sys.exc_info()[0]==None):
+            # logging.info("# Taking screenshot.")
+            test_method_name ='hello'
+            self.driver.save_screenshot("/home/ankit_kumar/PycharmProjects/Selenium_automation/ScreenShots/%s.png"% test_method_name)
         self.driver.close()
 
-    def test_name_on_timesheet(self):
+    '''def test_name_on_timesheet(self):
         header_displayed=self.timesheet.get_name_in_header()
         name_from_email=self.timesheet.get_name_from_email()
         assert name_from_email.lower() in str(header_displayed.text).lower()
@@ -55,32 +63,37 @@ class Test_timesheet:
             self.timesheet.click_previous_button()
             date = self.timesheet.get_current_date()
             prev_date=now-timedelta(days=i)
-            assert prev_date.strftime(assert_date_format) in date
-
-    def test_colorchange_orange_blue_after8hrs(self):
+            assert prev_date.strftime(assert_date_format) in date'''
+    @data(*get_csv_data(test_csv_orange))
+    @unpack
+    def test_colorchange_orange_blue_after8hrs(self,text,type,hour,min,desc):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=six_hours)
+        self.timesheet.create_entry_complete(text,type,hour,min,desc)
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert orange_hexcode == self.init_color
         self.timesheet.create_entry_complete(hours=two_hours)
         self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert blue_hexcode == self.init_color
 
-    def test_colorchange_blue_pink_after9hrs(self):
+    @data(*get_csv_data(test_csv_blue))
+    @unpack
+    def test_colorchange_blue_pink_after9hrs(self,text,type,hours,mins,desc):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(hours=eight_hours)
+        self.timesheet.create_entry_complete(text,type,hours,mins,desc)
         self.init_color=self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert blue_hexcode == self.init_color
         self.timesheet.create_entry_complete(hours=two_hours)
         self.init_color = self.timesheet.get_hexcode_from_rgb(self.timesheet.get_color_rgb_value())
         assert pink_hexcode == self.init_color
 
-    def test_add_task(self):
+    @data(*get_csv_data(test_csv_blue))
+    @unpack
+    def test_add_task(self,text,type,hours,mins,desc):
         self.timesheet.delete_task()
-        self.timesheet.create_entry_complete(desc=description)
+        self.timesheet.create_entry_complete(text,type,hours,mins,desc)
         assert self.timesheet.get_slno_from_display() == '1.'
 
-    def test_delete(self):
+    '''def test_delete(self):
         self.timesheet.delete_task()
         message=self.timesheet.get_delete_status()
         assert message == delete_message
@@ -186,7 +199,7 @@ class Test_timesheet:
         self.dashboard.navigate_to_timesheet_page()
         self.timesheet.set_suggested_entry_reject()
         msg=self.timesheet.get_delete_status()
-        assert delete_message in msg
+        assert delete_message in msg'''
 
 
 
