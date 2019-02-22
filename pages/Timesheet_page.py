@@ -1,7 +1,6 @@
 import datetime
 import re
 import time
-
 from colormap import rgb2hex
 from selenium.webdriver.common.keys import Keys
 now = datetime.datetime.now()
@@ -32,10 +31,14 @@ class Timesheet_page:
         self.locator_project_code_dropdown='//ul/li[1]/md-autocomplete-parent-scope/span[1]/span'
         self.locator_datepicker='body > md-content > div > div > div.md-title.layout-align-space-between-center.layout-row > span'
         self.locator_type_dropdown='//md-select[@ng-model="newEntry.type"]'
+        self.locator_type_dropdown_edit='//md-select[@ng-model="entry.type"]'
         self.locator_type_choice='//div[@class="md-select-menu-container md-active md-clickable"]/md-select-menu/md-content/md-option[1]/div'
         self.locator_hours='newEntry.hrs'
+        self.locator_hours_edit = 'entry.hrs'
         self.locator_mins='newEntry.min'
+        self.locator_mins_edit = 'entry.min'
         self.locator_description='newEntry.description'
+        self.locator_description_edit = '//input[@ng-model="entry.description"]'
         self.locator_hit_add= '/html/body/md-content/div/div/md-card/md-card-text/form/div[1]/button'
         self.locator_color_header='.md-bar.md-bar2'
         self.locator_delete_button='//form/div[1]/div[1]/div[1]/md-icon-button/md-icon/i'
@@ -56,6 +59,10 @@ class Timesheet_page:
         self.locator_toast_message='//md-content/md-toast/div[@class="md-toast-content"]/span[@class="md-toast-text ng-binding"]'
         self.locator_chrome_cleardata='chrome://settings/clearBrowserData'
         self.locator_hit_enter_in_cleardata_screen='settings-ui'
+        self.locator_suggested_username='hiwaytest'
+        self.locator_suggested_entry_accept='//md-icon[@title="Accept"]/i[@class="material-icons"]'
+        self.locator_suggested_entry_reject='//md-icon[@title="Reject"]/i[@class="material-icons"]'
+
 
 
     def timesheet_page(self):
@@ -94,26 +101,63 @@ class Timesheet_page:
         project_code.clear()
         project_code.send_keys(text)
 
+
     def create_entry_type(self,type="Debug"):
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH,self.locator_type_dropdown)))
         select=self.driver.find_element_by_xpath(self.locator_type_dropdown)
         select.send_keys(type)
 
+    def edit_entry_type(self, type="Debug"):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, self.locator_type_dropdown_edit)))
+        select = self.driver.find_element_by_xpath(self.locator_type_dropdown_edit)
+        select.send_keys(type)
+        select.send_keys(Keys.TAB)
+        self.wait_till_toast_dissapear()
+
     def create_entry_hours(self,hours='05'):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.NAME, self.locator_hours)))
         self.hour=self.driver.find_element_by_name(self.locator_hours).send_keys(hours)
+
+    def edit_entry_hours(self,hours='05'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.NAME, self.locator_hours_edit)))
+        self.hour=self.driver.find_element_by_name(self.locator_hours_edit)
+        self.hour.clear()
+        self.hour.send_keys(hours)
+        self.wait_till_toast_dissapear()
+
 
     def create_entry_mins(self,mins='30'):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.NAME, self.locator_mins)))
         self.mins=self.driver.find_element_by_name(self.locator_mins).send_keys(mins)
 
+    def edit_entry_mins(self,mins='30'):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.NAME, self.locator_mins_edit)))
+        self.mins=self.driver.find_element_by_name(self.locator_mins_edit)
+        self.mins.clear()
+        self.mins.send_keys(mins)
+        self.wait_till_toast_dissapear()
+
+
+
+
     def create_entry_description(self,description='default description'):
         # element = WebDriverWait(self.driver, 10).until(
         #     EC.visibility_of_element_located((By.XPATH, self.locator_description)))
         self.description=self.driver.find_element_by_name(self.locator_description).send_keys(description)
+
+    def edit_entry_description(self,description='default description'):
+        # element = WebDriverWait(self.driver, 10).until(
+        #     EC.visibility_of_element_located((By.XPATH, self.locator_description)))
+        self.description=self.driver.find_element_by_xpath(self.locator_description_edit)
+        self.description.clear()
+        self.description.send_keys(description)
+        self.description.send_keys(Keys.TAB)
 
     def create_entry_hit_add(self):
         element = WebDriverWait(self.driver, 10).until(
@@ -142,10 +186,7 @@ class Timesheet_page:
         while(True):
             try:
                 delete=self.driver.find_element_by_xpath(self.locator_delete_button).click()
-                element = WebDriverWait(self.driver, 10).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
-                element = WebDriverWait(self.driver, 10).until_not(
-                    EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
+                self.wait_till_toast_dissapear()
 
 
             except:
@@ -198,15 +239,19 @@ class Timesheet_page:
             select_users.send_keys(i)
         user=self.driver.find_element_by_xpath(self.locator_username_autocomplete).click()
 
+    def wait_till_toast_dissapear(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
+        element = WebDriverWait(self.driver, 10).until_not(
+            EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
+
     def save_sharedwith_entry(self):
         # time.sleep(5)
         element = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.locator_sharedwith_select_users_hidden_popups)))
         save=self.driver.find_element_by_css_selector(self.locator_sharedwith_save_button).click()
-        element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
-        element = WebDriverWait(self.driver, 10).until_not(
-            EC.presence_of_element_located((By.CSS_SELECTOR,self.locator_toast_div)))
+        self.wait_till_toast_dissapear()
+
 
     def save_sharedwith_complete(self,name=shared_with_username):
         self.create_entry_complete()
@@ -231,14 +276,11 @@ class Timesheet_page:
     def signout_from_google(self):
         self.driver.get(google_url)
         self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
+        element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(
+            (By.XPATH, self.locator_google_signout)))
         self.driver.find_element_by_xpath(self.locator_google_signout).click()
 
     def logout(self):
-        # try:
-        #     if(self.driver.find_element_by_xpath('/html/body/md-content/md-toast/div/button/span').is_enabled()):
-        #         element = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH,'/html/body/md-content/md-toast/div/button/span')))
-        # except:
-        #     pass
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(
                 (By.CSS_SELECTOR,self.locator_logout_button)))
         username = self.driver.find_element_by_css_selector(self.locator_logout_button).click()
@@ -272,4 +314,24 @@ class Timesheet_page:
             EC.presence_of_element_located((By.CSS_SELECTOR, self.locator_toast_div)))
         return str(msg)
 
+    def get_message_from_hidden_input_invalid_hours(self):
+        time.sleep(10)
+        message=self.driver.execute_script('return $("//md-card-text/form/div/md-input-container[@flex-xs="50"]").text();')
+        return str(message)
 
+    def get_suggested_user_name(self):
+        name=self.driver.find_element_by_partial_link_text(self.locator_suggested_username).text
+        return str(name)
+
+    def set_suggested_entry_accept(self):
+        accept=self.driver.find_element_by_xpath(self.locator_suggested_entry_accept)
+        accept.click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
+
+    def set_suggested_entry_reject(self):
+        accept=self.driver.find_element_by_xpath(self.locator_suggested_entry_reject)
+        accept.click()
+        element = WebDriverWait(self.driver, 10).until(
+            EC.invisibility_of_element_located((By.PARTIAL_LINK_TEXT, self.locator_suggested_username)))
+        self.driver.refresh()

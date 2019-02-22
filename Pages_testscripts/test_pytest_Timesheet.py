@@ -123,6 +123,38 @@ class Test_timesheet:
         suggested_username=self.timesheet.get_name_from_suggested_entry()
         assert test_userID_name in suggested_username
 
+    def test_task_entry_suggested_is_accepted(self):
+        self.timesheet.logout()
+        self.timesheet.login_as_testuser()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.delete_task()
+        self.timesheet.save_sharedwith_complete(my_name)
+        self.timesheet.logout()
+        self.login.login_complete()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.set_suggested_entry_accept()
+        name=self.timesheet.get_name_from_suggested_entry()
+        assert hiway_user_name in name
+
+    def test_task_entry_suggested_is_rejected(self):
+        self.timesheet.logout()
+        self.timesheet.login_as_testuser()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.delete_task()
+        self.timesheet.save_sharedwith_complete(my_name)
+        self.timesheet.logout()
+        self.login.login_complete()
+        self.hiway.click_on_Continue()
+        self.dashboard.navigate_to_timesheet_page()
+        self.timesheet.set_suggested_entry_reject()
+        msg=self.timesheet.get_delete_status()
+        assert delete_message in msg
+
+
+
     def test_freeze_message(self):
         self.timesheet.datepicker_navigate_to_specified_date(specified_date)
         msg=self.timesheet.get_freeze_message()
@@ -140,6 +172,23 @@ class Test_timesheet:
         self.timesheet.create_entry_complete(hours=ten_hours)
         message=self.timesheet.get_message_from_toast()
         assert total_hrs_msg in message
+
+    def test_single_entry_restrriction(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete(hours=fifteen_hours)
+        message=self.timesheet.get_delete_status()
+        assert  delete_message in  message
+
+    def test_edit_timesheet_entry(self):
+        self.timesheet.delete_task()
+        self.timesheet.create_entry_complete()
+        self.timesheet.edit_entry_type(type=edit_type)
+        self.timesheet.edit_entry_hours(hours=edit_hours)
+        self.timesheet.edit_entry_mins(mins=edit_mins)
+        self.timesheet.edit_entry_description(description=edit_description)
+        message=self.timesheet.get_message_from_toast()
+        assert 'update' in message
+
 
 
 
