@@ -59,6 +59,8 @@ class Timesheet_page:
         self.locator_toast_message='//md-content/md-toast/div[@class="md-toast-content"]/span[@class="md-toast-text ng-binding"]'
         self.locator_chrome_cleardata='chrome://settings/clearBrowserData'
         self.locator_hit_enter_in_cleardata_screen='settings-ui'
+        self.locator_suggested_username='hiwaytest'
+
 
 
     def timesheet_page(self):
@@ -272,6 +274,8 @@ class Timesheet_page:
     def signout_from_google(self):
         self.driver.get(google_url)
         self.driver.find_element_by_xpath(self.locator_google_my_avtaar).click()
+        element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(
+            (By.XPATH, self.locator_google_signout)))
         self.driver.find_element_by_xpath(self.locator_google_signout).click()
 
     def logout(self):
@@ -313,4 +317,7 @@ class Timesheet_page:
         message=self.driver.execute_script('return $("//md-card-text/form/div/md-input-container[@flex-xs="50"]").text();')
         return str(message)
 
+    def get_suggested_user_name(self):
+        name=self.driver.find_element_by_partial_link_text(self.locator_suggested_username).text
+        return str(name)
 
